@@ -110,7 +110,71 @@
 .thread-meter{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-top:8px;font-size:11px;color:#b1c8c3}.thread-meter strong{color:#f2d4a0}.thread-mini-bar{height:7px;background:#365056;border-radius:100px;overflow:hidden;margin:7px 0 4px}.thread-mini-bar span{display:block;background:linear-gradient(90deg,#dc8469,#eac88a);height:100%;border-radius:100px}
 .post-reaction{border-left:3px solid #ba915b;padding:10px 13px;background:#1c2b30;margin:10px 0 4px;border-radius:0 8px 8px 0}.post-reaction b{font-size:11px;color:#e4c98f}.post-reaction p{font-size:12px;color:#e0e8e7;margin:5px 0 0;line-height:1.6}
 @media(max-width:520px){.thread-top{align-items:flex-start}.thread-comment{padding:12px 9px}.thread-body{font-size:12px}.thread-avatar{width:27px;height:27px}.thread-votes button{padding:6px}}
+
+/* V9 · tidy patch studio. League inspired navy, gold, teal typography retained. */
+.item-icon{width:30px;height:30px;flex:0 0 30px;display:inline-grid;place-items:center;position:relative;vertical-align:middle;border:1px solid #745d3b;border-radius:7px;background:linear-gradient(130deg,#18343c,#3c3528);overflow:hidden;color:#e2c992}
+.item-icon img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1}
+.item-icon.lg{width:60px;height:60px;flex-basis:60px;border-radius:12px}.item-icon b{font-size:14px}
+.queue-entry .queue-tag{display:flex;align-items:center;gap:7px}
+.queue-entry .queue-tag .portrait-shell,.queue-entry .queue-tag .item-icon{height:25px;width:25px;flex-basis:25px}
+.community-box.fold-community{padding:0;margin:0 0 16px;border:1px solid #36515b;background:#0b1920;border-radius:9px;overflow:hidden}
+.community-summary{list-style:none;cursor:pointer;display:flex;align-items:center;flex-wrap:wrap;gap:9px;padding:13px 15px;color:#e9d19a;font-weight:850;font-size:13px;background:#18282d}
+.community-summary .muted{font-size:11px;font-weight:500}.community-summary:after{content:'⌄';margin-left:auto}
+.fold-community[open]>.community-summary:after{content:'⌃'}.community-summary::-webkit-details-marker{display:none}
+.fold-community>.headrow{padding:15px 14px 4px}.fold-community>.community-metrics,.fold-community>.thread-meter,.fold-community>.thread-mini-bar,.fold-community>.thread-board{margin-left:14px;margin-right:14px}
+.fold-community>.thread-board{margin-bottom:14px}.effect-details{margin-top:12px;border-top:1px solid #364c51;padding-top:9px}
+.effect-details>summary{color:#e8c58c;font-weight:800;cursor:pointer;font-size:11px;padding:3px 0}.effect-description{color:#b1c9c8;font-size:11px;line-height:1.7;margin:10px 0;max-height:100px;overflow:auto}
+.editor-active{display:flex;align-items:center;gap:10px;padding:9px 11px;margin:0 0 13px}
+.editor-active .portrait-shell,.editor-active .item-icon{width:30px;height:30px;flex:0 0 30px}
+.queue-action{margin-top:12px}.queue-note{font-size:11px;padding:10px}
+.panel{box-shadow:0 4px 14px #00000012}.panel h3{margin-bottom:12px}
+.rec-grid{gap:9px;margin:11px 0}.rec-box{padding:10px}.rec-row{padding:7px 0}.rec-row .rec-main small{margin-top:2px}
+.target-hits{gap:7px}.target-hit{min-height:42px}
+@media (orientation:portrait) and (max-width:1100px){
+ .app-shell{display:block}.sidebar{display:none}.content{padding:16px clamp(10px,2vw,24px) calc(100px + env(safe-area-inset-bottom))}
+ .mobile-bar{display:flex;position:fixed;bottom:0;left:0;right:0;background:#0b171ef2;border-top:1px solid #435052;z-index:60;padding:8px 4px env(safe-area-inset-bottom,8px);backdrop-filter:blur(12px);overflow-x:auto;justify-content:flex-start}
+ .mobile-bar button{min-width:61px;flex:1 0 auto;max-width:110px;padding:9px 3px;background:transparent;border:0;color:#9aadb7;font-size:10px;font-weight:800}
+ .mobile-bar button.active{color:#efd2a3}.mobile-bar b{display:block;font-size:18px;margin-bottom:3px}
+ .grid>.panel:not(.stat){grid-column:span 12!important}.topline{margin-bottom:15px}.headline{font-size:25px}
+ .fieldgrid{grid-template-columns:1fr 1fr}.rec-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .music-fab{bottom:80px}.music-panel{bottom:134px}
+}
+@media(max-width:670px){.fieldgrid,.rec-grid{grid-template-columns:1fr}.content{padding-left:10px;padding-right:10px}.grid{gap:10px}.panel{padding:14px}.headline{font-size:23px}.choicegroup{gap:5px}.choicegroup .tabbtn{padding:8px 9px;font-size:11px}.rec-box{padding:10px}.rec-row{gap:6px}.target-hits{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:360px){.target-hits{grid-template-columns:1fr}.stat{grid-column:span 12}.queue-actions{grid-template-columns:1fr}.queue-actions [data-act="publish"]{grid-column:auto}}
+
+/* V10 community discussion: compact preview with optional expansion */
+.forum-type{font-size:10px;font-weight:700;color:#c4a66d;border:1px solid #66523a;background:#29231d;padding:2px 6px;border-radius:4px;white-space:nowrap}
+.thread-more{width:100%;cursor:pointer;padding:13px 10px;text-align:center;background:#14282f;border:1px solid #42575a;border-radius:6px;color:#e9d099;font-size:12px;font-weight:800;margin-top:8px}
+.thread-more:hover,.thread-more:focus-visible{background:#223c43;outline:1px solid #cfab70}
+.thread-author{display:flex;flex-wrap:wrap;align-items:center;gap:5px}
+.thread-body{white-space:normal;overflow-wrap:anywhere}
+@media(orientation:portrait) and (max-width:1100px){.thread-top{flex-wrap:wrap;gap:10px}.thread-sort{margin-left:0}.thread-comment{gap:8px}.thread-content{min-width:0}}
+
+/* V10 community discussion: compact preview with optional expansion */
+.forum-type{font-size:10px;font-weight:700;color:#c4a66d;border:1px solid #66523a;background:#29231d;padding:2px 6px;border-radius:4px;white-space:nowrap}
+.thread-more{width:100%;cursor:pointer;padding:13px 10px;text-align:center;background:#14282f;border:1px solid #42575a;border-radius:6px;color:#e9d099;font-size:12px;font-weight:800;margin-top:8px}
+.thread-more:hover,.thread-more:focus-visible{background:#223c43;outline:1px solid #cfab70}
+.thread-author{display:flex;flex-wrap:wrap;align-items:center;gap:5px}
+.thread-body{white-space:normal;overflow-wrap:anywhere}
+@media(orientation:portrait) and (max-width:1100px){.thread-top{flex-wrap:wrap;gap:10px}.thread-sort{margin-left:0}.thread-comment{gap:8px}.thread-content{min-width:0}}
+
+/* V10 community discussion: compact preview with optional expansion */
+.forum-type{font-size:10px;font-weight:700;color:#c4a66d;border:1px solid #66523a;background:#29231d;padding:2px 6px;border-radius:4px;white-space:nowrap}
+.thread-more{width:100%;cursor:pointer;padding:13px 10px;text-align:center;background:#14282f;border:1px solid #42575a;border-radius:6px;color:#e9d099;font-size:12px;font-weight:800;margin-top:8px}
+.thread-more:hover,.thread-more:focus-visible{background:#223c43;outline:1px solid #cfab70}
+.thread-author{display:flex;flex-wrap:wrap;align-items:center;gap:5px}
+.thread-body{white-space:normal;overflow-wrap:anywhere}
+@media(orientation:portrait) and (max-width:1100px){.thread-top{flex-wrap:wrap;gap:10px}.thread-sort{margin-left:0}.thread-comment{gap:8px}.thread-content{min-width:0}}
+
+/* V10 community discussion: compact preview with optional expansion */
+.forum-type{font-size:10px;font-weight:700;color:#c4a66d;border:1px solid #66523a;background:#29231d;padding:2px 6px;border-radius:4px;white-space:nowrap}
+.thread-more{width:100%;cursor:pointer;padding:13px 10px;text-align:center;background:#14282f;border:1px solid #42575a;border-radius:6px;color:#e9d099;font-size:12px;font-weight:800;margin-top:8px}
+.thread-more:hover,.thread-more:focus-visible{background:#223c43;outline:1px solid #cfab70}
+.thread-author{display:flex;flex-wrap:wrap;align-items:center;gap:5px}
+.thread-body{white-space:normal;overflow-wrap:anywhere}
+@media(orientation:portrait) and (max-width:1100px){.thread-top{flex-wrap:wrap;gap:10px}.thread-sort{margin-left:0}.thread-comment{gap:8px}.thread-content{min-width:0}}
 </style></head><body><div class="app-shell"><aside class="sidebar"><div class="brand"><div class="eyebrow">SUMMONER'S RIFT BALANCE SIM</div><h1>PATCH <span>ONE.</span></h1><div class="tagline">한 번의 패치로 뒤집히는 소환사의 협곡</div></div><nav class="navstack" id="desktopNav"></nav><div class="sidebar-note"><strong>26.21 기반 · 오프라인 시뮬레이터</strong> 실제 아이템·룬·라인 임무를 참고한 <b>가상 밸런스 게임</b>입니다. 게임 내 승률/픽률과 패치 추천은 실제 랭크 통계가 아닌 시뮬레이션입니다. 초상화·BGM은 인터넷 연결 시 불러옵니다.</div></aside><main class="content"><div id="app"></div><div class="page-footer">PATCH ONE — 팬메이드 비공식 게임 · Riot Games 비제휴 · 기초 참고 자료: Riot Games 26.1 / 26.21 패치 노트, OP.GG 26.21 빌드(일부 챔피언), 2026 역할 임무 자료. 수치는 실시간 라이브 기록이 아닌 게임 내부 모델로 산출됩니다. 저장은 이 브라우저의 로컬 저장소에 보관됩니다. 공식 아트: Riot Data Dragon. BGM: Riot Games 공식 음원(원곡 플레이어 링크). <a href="https://op.gg/ko/lol/champions" target="_blank" rel="noopener">OP.GG</a> · <a href="https://lol.ps/versus" target="_blank" rel="noopener">LOL.PS</a> 참고 링크. PATCH ONE is not endorsed by Riot Games and does not reflect the views or opinions of Riot Games or anyone officially involved in producing or managing Riot Games properties. Riot Games and all associated properties are trademarks or registered trademarks of Riot Games, Inc.</div></main></div><nav class="mobile-bar" id="mobileNav"></nav><button type="button" class="music-fab" id="musicToggle" aria-expanded="false" aria-controls="musicPanel">♫ BGM</button><aside class="music-panel" id="musicPanel" hidden><div style="display:flex;justify-content:space-between;align-items:center;gap:8px"><strong style="color:#f1d39a">♫ 실제 소환사의 협곡 BGM</strong><button type="button" class="btn tiny" id="musicClose">닫기 ✕</button></div><p class="help" style="margin:8px 0 0">구버전 클래식 음악과 2014년 리뉴얼 이후 협곡 기본 테마를 선택하세요. 게임마다 달라지는 동적 사운드 전체를 그대로 재현하는 것은 아닙니다.</p><div class="track-picker" id="musicTracks"><button type="button" class="tabbtn" data-song="0">구버전 · 클래식</button><button type="button" class="tabbtn" data-song="1">현행 기본 테마</button></div><div id="musicFrameHost"><div class="inner" style="height:95px;display:grid;place-items:center;color:#9daeb4;text-align:center">음악을 선택하면 공식 플레이어가 열립니다.<br>자동 재생 제한 시 플레이어의 ▶ 버튼을 눌러주세요.</div></div><div style="display:flex;gap:9px;align-items:center;justify-content:space-between;margin-top:10px"><button class="btn tiny danger" id="musicStop">■ 음악 끄기</button><a class="music-link" id="musicSource" target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/watch?v=YUr7FeadQMQ">Riot 공식 원곡 열기 ↗</a></div><p class="player-hint">인터넷 필요 · 2009년 클래식 테마 / 2014년 업데이트 협곡 전반부 테마. 모두 Riot 공식 배급 음원 플레이어이며 사이트에 음악 파일을 재업로드하지 않습니다. 재생이 차단되면 원곡 열기를 눌러주세요.</p></aside><input type="file" id="importFile" accept=".json,application/json" style="display:none"/><script>
+
 const DB={"roster":{"이렐리아":["TOP"],"가렌":["TOP","JUNGLE"],"다리우스":["TOP"],"아트록스":["TOP"],"피오라":["TOP"],"카밀":["TOP"],"잭스":["TOP","JUNGLE"],"레넥톤":["TOP"],"리븐":["TOP"],"올라프":["TOP","JUNGLE"],"클레드":["TOP"],"세트":["TOP"],"모데카이저":["TOP","MID"],"그웬":["TOP","JUNGLE"],"럼블":["TOP","MID","SUPPORT"],"케넨":["TOP"],"블라디미르":["TOP","MID","BOT"],"말파이트":["TOP"],"오른":["TOP","SUPPORT"],"사이온":["TOP"],"초가스":["TOP"],"쉔":["TOP","JUNGLE"],"문도 박사":["TOP"],"우르곳":["TOP","JUNGLE"],"일라오이":["TOP"],"나서스":["TOP"],"요릭":["TOP"],"트린다미어":["TOP"],"케일":["TOP","MID"],"티모":["TOP","BOT"],"퀸":["TOP"],"제이스":["TOP","MID"],"갱플랭크":["TOP"],"크산테":["TOP"],"오공":["TOP","JUNGLE"],"하이머딩거":["TOP","MID","SUPPORT"],"워윅":["TOP","JUNGLE"],"자크":["TOP","JUNGLE","SUPPORT"],"나르":["TOP"],"암베사":["TOP","JUNGLE","SUPPORT"],"자헨":["TOP","JUNGLE"],"베인":["TOP","BOT"],"오로라":["TOP","MID"],"스카너":["TOP","JUNGLE"],"탐 켄치":["TOP","SUPPORT"],"판테온":["TOP","JUNGLE","MID","SUPPORT"],"그라가스":["TOP","JUNGLE","MID","SUPPORT"],"신지드":["TOP","SUPPORT"],"뽀삐":["TOP","JUNGLE","SUPPORT"],"우디르":["TOP","JUNGLE"],"볼리베어":["TOP","JUNGLE"],"렝가":["TOP","JUNGLE"],"아크샨":["TOP","MID"],"야스오":["TOP","MID","BOT"],"요네":["TOP","MID","BOT"],"케인":["TOP","JUNGLE"],"리산드라":["TOP","MID"],"블리츠크랭크":["TOP","SUPPORT"],"리 신":["JUNGLE"],"비에고":["JUNGLE"],"마스터 이":["JUNGLE"],"킨드레드":["JUNGLE"],"그레이브즈":["JUNGLE"],"카직스":["JUNGLE"],"녹턴":["JUNGLE"],"자르반 4세":["JUNGLE"],"신 짜오":["JUNGLE"],"바이":["JUNGLE"],"벨베스":["JUNGLE"],"릴리아":["JUNGLE"],"카서스":["JUNGLE","MID","BOT"],"피들스틱":["JUNGLE","MID","SUPPORT"],"이블린":["JUNGLE"],"엘리스":["JUNGLE"],"니달리":["JUNGLE"],"아무무":["JUNGLE"],"람머스":["JUNGLE"],"세주아니":["JUNGLE"],"마오카이":["JUNGLE","SUPPORT"],"누누와 윌럼프":["JUNGLE"],"헤카림":["JUNGLE"],"쉬바나":["JUNGLE"],"탈리야":["JUNGLE","MID"],"브랜드":["JUNGLE","MID","SUPPORT"],"다이애나":["JUNGLE","MID"],"에코":["JUNGLE","MID","SUPPORT"],"트런들":["JUNGLE"],"브라이어":["JUNGLE"],"아이번":["JUNGLE","SUPPORT"],"키아나":["JUNGLE","MID"],"자이라":["JUNGLE","SUPPORT"],"샤코":["JUNGLE","SUPPORT"],"렉사이":["JUNGLE"],"나피리":["JUNGLE","MID"],"모르가나":["JUNGLE","MID","SUPPORT"],"탈론":["JUNGLE","MID"],"트위치":["JUNGLE","BOT"],"아리":["MID","SUPPORT"],"르블랑":["MID"],"아칼리":["MID"],"제드":["MID"],"카타리나":["MID"],"피즈":["MID"],"사일러스":["MID"],"오리아나":["MID"],"신드라":["MID"],"빅토르":["MID"],"아지르":["MID"],"라이즈":["MID"],"카시오페아":["MID","BOT"],"애니":["MID","SUPPORT"],"베이가":["MID","SUPPORT"],"벡스":["MID"],"흐웨이":["MID","BOT"],"아우렐리온 솔":["MID"],"조이":["MID"],"럭스":["MID","BOT","SUPPORT"],"제라스":["MID","SUPPORT"],"말자하":["MID"],"애니비아":["MID","BOT"],"트위스티드 페이트":["MID"],"갈리오":["MID","SUPPORT"],"트리스타나":["MID","BOT"],"코르키":["MID","BOT"],"스웨인":["MID","BOT","SUPPORT"],"카사딘":["MID"],"니코":["MID","SUPPORT"],"세라핀":["MID","BOT","SUPPORT"],"멜":["MID","BOT","SUPPORT"],"직스":["MID","BOT"],"카르마":["MID","SUPPORT"],"벨코즈":["MID","BOT","SUPPORT"],"미스 포츈":["MID","BOT","SUPPORT"],"제리":["MID","BOT"],"이즈리얼":["MID","BOT"],"애쉬":["MID","BOT","SUPPORT"],"징크스":["BOT","SUPPORT"],"케이틀린":["BOT","SUPPORT"],"바루스":["BOT"],"카이사":["BOT"],"진":["BOT"],"루시안":["BOT"],"시비르":["BOT"],"자야":["BOT"],"칼리스타":["BOT"],"드레이븐":["BOT"],"코그모":["BOT"],"아펠리오스":["BOT"],"스몰더":["BOT"],"사미라":["BOT"],"닐라":["BOT"],"세나":["BOT","SUPPORT"],"유나라":["BOT"],"질리언":["SUPPORT"],"쓰레쉬":["SUPPORT"],"레오나":["SUPPORT"],"노틸러스":["SUPPORT"],"라칸":["SUPPORT"],"알리스타":["SUPPORT"],"브라움":["SUPPORT"],"렐":["SUPPORT"],"타릭":["SUPPORT"],"파이크":["SUPPORT"],"나미":["SUPPORT"],"룰루":["SUPPORT"],"소라카":["SUPPORT"],"잔나":["SUPPORT"],"유미":["SUPPORT"],"밀리오":["SUPPORT"],"레나타 글라스크":["SUPPORT"],"소나":["SUPPORT"],"바드":["SUPPORT"],"로크":["MID"]},"classes":{"말파이트":"TANK","오른":"TANK","사이온":"TANK","초가스":"TANK","쉔":"TANK","문도 박사":"TANK","크산테":"TANK","마오카이":"TANK","람머스":"TANK","아무무":"TANK","세주아니":"TANK","자크":"TANK","누누와 윌럼프":"TANK","스카너":"TANK","브라움":"TANK","알리스타":"TANK","레오나":"TANK","노틸러스":"TANK","렐":"TANK","탐 켄치":"TANK","갈리오":"TANK","뽀삐":"TANK","가렌":"BRUISER","다리우스":"BRUISER","아트록스":"BRUISER","레넥톤":"BRUISER","올라프":"BRUISER","클레드":"BRUISER","세트":"BRUISER","우르곳":"BRUISER","일라오이":"BRUISER","나서스":"BRUISER","요릭":"BRUISER","워윅":"BRUISER","자르반 4세":"BRUISER","신 짜오":"BRUISER","바이":"BRUISER","헤카림":"BRUISER","트런들":"BRUISER","쉬바나":"BRUISER","볼리베어":"BRUISER","브라이어":"BRUISER","렉사이":"BRUISER","판테온":"BRUISER","우디르":"BRUISER","암베사":"BRUISER","자헨":"BRUISER","오공":"BRUISER","나르":"BRUISER","신지드":"BRUISER","피오라":"DUELIST","카밀":"DUELIST","잭스":"DUELIST","리븐":"DUELIST","트린다미어":"DUELIST","이렐리아":"DUELIST","비에고":"DUELIST","벨베스":"DUELIST","그웬":"DUELIST","야스오":"DUELIST","요네":"DUELIST","닐라":"DUELIST","케인":"DUELIST","사일러스":"DUELIST","제드":"ASSASSIN_AD","탈론":"ASSASSIN_AD","카직스":"ASSASSIN_AD","렝가":"ASSASSIN_AD","녹턴":"ASSASSIN_AD","키아나":"ASSASSIN_AD","나피리":"ASSASSIN_AD","파이크":"ASSASSIN_AD","샤코":"ASSASSIN_AD","아칼리":"ASSASSIN_AP","피즈":"ASSASSIN_AP","카타리나":"ASSASSIN_AP","이블린":"ASSASSIN_AP","다이애나":"ASSASSIN_AP","에코":"ASSASSIN_AP","르블랑":"ASSASSIN_AP","카사딘":"ASSASSIN_AP","엘리스":"ASSASSIN_AP","징크스":"CRIT","케이틀린":"CRIT","애쉬":"CRIT","진":"CRIT","미스 포츈":"CRIT","루시안":"CRIT","시비르":"CRIT","자야":"CRIT","드레이븐":"CRIT","아펠리오스":"CRIT","제리":"CRIT","스몰더":"CRIT","사미라":"CRIT","트리스타나":"CRIT","유나라":"CRIT","코르키":"CRIT","퀸":"CRIT","갱플랭크":"CRIT","베인":"ONHIT","바루스":"ONHIT","카이사":"ONHIT","코그모":"ONHIT","트위치":"ONHIT","칼리스타":"ONHIT","마스터 이":"ONHIT","킨드레드":"ONHIT","케일":"ONHIT","아지르":"ONHIT","이즈리얼":"CASTER_AD","제이스":"CASTER_AD","그레이브즈":"CASTER_AD","세나":"CASTER_AD","아리":"MAGE","오리아나":"MAGE","신드라":"MAGE","빅토르":"MAGE","라이즈":"MAGE","카시오페아":"MAGE","애니":"MAGE","베이가":"MAGE","벡스":"MAGE","오로라":"MAGE","흐웨이":"MAGE","아우렐리온 솔":"MAGE","조이":"MAGE","럭스":"MAGE","제라스":"MAGE","브랜드":"MAGE","말자하":"MAGE","애니비아":"MAGE","리산드라":"MAGE","트위스티드 페이트":"MAGE","탈리야":"MAGE","스웨인":"MAGE","니코":"MAGE","세라핀":"MAGE","멜":"MAGE","직스":"MAGE","벨코즈":"MAGE","럼블":"MAGE","블라디미르":"MAGE","하이머딩거":"MAGE","카서스":"MAGE","티모":"MAGE","케넨":"MAGE","모르가나":"MAGE","카르마":"MAGE","피들스틱":"MAGE","자이라":"MAGE","그라가스":"MAGE","질리언":"MAGE","나미":"ENCHANT","룰루":"ENCHANT","소라카":"ENCHANT","잔나":"ENCHANT","유미":"ENCHANT","밀리오":"ENCHANT","레나타 글라스크":"ENCHANT","소나":"ENCHANT","아이번":"ENCHANT","쓰레쉬":"CATCHER","블리츠크랭크":"CATCHER","라칸":"CATCHER","타릭":"CATCHER","바드":"CATCHER","모데카이저":"BRUISER","아크샨":"BRUISER","리 신":"BRUISER","릴리아":"BRUISER","니달리":"BRUISER","로크":"ASSASSIN_AD"},"items":{"무한의 대검":{"cost":3500,"tags":["CRIT"]},"루난의 허리케인":{"cost":2650,"tags":["CRIT","ONHIT"]},"도미닉 경의 인사":{"cost":3300,"tags":["CRIT","ONHIT"]},"필멸자의 운명":{"cost":3000,"tags":["CRIT","ONHIT"]},"크라켄 학살자":{"cost":3000,"tags":["CRIT","ONHIT"]},"유령 무희":{"cost":2650,"tags":["CRIT","ONHIT"]},"고속 연사포":{"cost":2650,"tags":["CRIT"]},"징수의 총":{"cost":3000,"tags":["CRIT","ASSASSIN_AD"]},"윤 탈 야생화살":{"cost":3000,"tags":["CRIT"]},"정수 약탈자":{"cost":3050,"tags":["CRIT","CASTER_AD"]},"스태틱의 단검":{"cost":3000,"tags":["CRIT"]},"나보리 명멸검":{"cost":2650,"tags":["CRIT"]},"피바라기":{"cost":3400,"tags":["CRIT","ONHIT"]},"불멸의 철갑궁":{"cost":3000,"tags":["CRIT"]},"구인수의 격노검":{"cost":3000,"tags":["ONHIT"]},"몰락한 왕의 검":{"cost":3200,"tags":["ONHIT","DUELIST","BRUISER"]},"마법사의 최후":{"cost":2800,"tags":["ONHIT"]},"종말의 화살":{"cost":2650,"tags":["ONHIT"]},"끝없는 갈망":{"cost":3100,"tags":["ONHIT","DUELIST"]},"내셔의 이빨":{"cost":2900,"tags":["ONHIT","MAGE","ASSASSIN_AP"]},"경계":{"cost":3000,"tags":["ONHIT"]},"삼위일체":{"cost":3333,"tags":["BRUISER","DUELIST","CASTER_AD"]},"발걸음 분쇄기":{"cost":3300,"tags":["BRUISER"]},"칠흑의 양날 도끼":{"cost":3000,"tags":["BRUISER","CASTER_AD"]},"갈라진 하늘":{"cost":3100,"tags":["BRUISER","DUELIST"]},"죽음의 무도":{"cost":3300,"tags":["BRUISER","DUELIST"]},"스테락의 도전":{"cost":3200,"tags":["BRUISER"]},"굶주린 히드라":{"cost":3300,"tags":["BRUISER","DUELIST"]},"거대한 히드라":{"cost":3300,"tags":["BRUISER","TANK"]},"실험적 마공학판":{"cost":3000,"tags":["BRUISER"]},"쇼진의 창":{"cost":3100,"tags":["BRUISER","DUELIST","CASTER_AD"]},"선체파괴자":{"cost":3000,"tags":["BRUISER"]},"대군주의 피갑옷":{"cost":3300,"tags":["BRUISER"]},"월식":{"cost":2900,"tags":["ASSASSIN_AD","BRUISER","DUELIST"]},"요우무의 유령검":{"cost":2800,"tags":["ASSASSIN_AD"]},"벼락폭풍검":{"cost":3000,"tags":["ASSASSIN_AD"]},"오만":{"cost":2800,"tags":["ASSASSIN_AD"]},"독사의 송곳니":{"cost":2500,"tags":["ASSASSIN_AD"]},"세릴다의 원한":{"cost":3000,"tags":["ASSASSIN_AD","CASTER_AD"]},"원칙의 원형낫":{"cost":2750,"tags":["ASSASSIN_AD"]},"그림자 검":{"cost":2800,"tags":["ASSASSIN_AD"]},"마법공학 총검":{"cost":3000,"tags":["ASSASSIN_AP","DUELIST"]},"그림자불꽃":{"cost":3200,"tags":["ASSASSIN_AP","MAGE"]},"폭풍 쇄도":{"cost":2800,"tags":["ASSASSIN_AP","MAGE"]},"리치베인":{"cost":2900,"tags":["ASSASSIN_AP","MAGE"]},"존야의 모래시계":{"cost":3250,"tags":["ASSASSIN_AP","MAGE"]},"라바돈의 죽음모자":{"cost":3500,"tags":["MAGE","ASSASSIN_AP"]},"루덴의 메아리":{"cost":2750,"tags":["MAGE"]},"악의":{"cost":2700,"tags":["MAGE"]},"검은 불꽃 횃불":{"cost":2800,"tags":["MAGE"]},"리안드리의 고통":{"cost":3000,"tags":["MAGE"]},"공허의 지팡이":{"cost":3000,"tags":["MAGE"]},"우주의 추진력":{"cost":3000,"tags":["MAGE"]},"라일라이의 수정홀":{"cost":2600,"tags":["MAGE"]},"지평선의 초점":{"cost":2700,"tags":["MAGE"]},"대천사의 지팡이":{"cost":2900,"tags":["MAGE","ENCHANT"]},"대균열":{"cost":3100,"tags":["MAGE","DUELIST","ASSASSIN_AP"]},"영겁의 지팡이":{"cost":2600,"tags":["MAGE"]},"밴시의 장막":{"cost":3000,"tags":["MAGE"]},"모렐로노미콘":{"cost":2850,"tags":["MAGE"]},"균열의 저주":{"cost":2900,"tags":["MAGE"]},"꽃 피는 새벽":{"cost":2500,"tags":["MAGE","ENCHANT"]},"진실의 집행자":{"cost":2800,"tags":["MAGE"]},"황혼과 새벽":{"cost":3100,"tags":["MAGE","ASSASSIN_AP"]},"얼어붙은 심장":{"cost":2500,"tags":["TANK"]},"태양불꽃 방패":{"cost":2800,"tags":["TANK"]},"공허한 광휘":{"cost":2800,"tags":["TANK"]},"강철심장":{"cost":3000,"tags":["TANK","BRUISER"]},"잭쇼":{"cost":3200,"tags":["TANK"]},"가시 갑옷":{"cost":2450,"tags":["TANK"]},"정령의 형상":{"cost":2700,"tags":["TANK"]},"망자의 갑옷":{"cost":2900,"tags":["TANK"]},"자연의 힘":{"cost":2800,"tags":["TANK"]},"끝없는 절망":{"cost":2800,"tags":["TANK"]},"란두인의 예언":{"cost":2700,"tags":["TANK"]},"케이닉 루컨":{"cost":2900,"tags":["TANK"]},"워모그의 갑옷":{"cost":3100,"tags":["TANK"]},"심연의 가면":{"cost":2650,"tags":["TANK"]},"얼어붙은 건틀릿":{"cost":2900,"tags":["TANK","DUELIST"]},"프로토플라즘 하네스":{"cost":2600,"tags":["TANK"]},"기사의 맹세":{"cost":2300,"tags":["CATCHER","TANK"]},"강철의 솔라리 펜던트":{"cost":2200,"tags":["CATCHER","TANK"]},"지크의 융합":{"cost":2200,"tags":["CATCHER","TANK"]},"슈렐리아의 군가":{"cost":2200,"tags":["ENCHANT","CATCHER"]},"월석 재생기":{"cost":2200,"tags":["ENCHANT"]},"불타는 향로":{"cost":2200,"tags":["ENCHANT"]},"흐르는 물의 지팡이":{"cost":2250,"tags":["ENCHANT"]},"구원":{"cost":2250,"tags":["ENCHANT"]},"미카엘의 축복":{"cost":2300,"tags":["ENCHANT"]},"새벽심장":{"cost":2500,"tags":["ENCHANT"]},"헬리아의 메아리":{"cost":2200,"tags":["ENCHANT"]},"제국의 명령":{"cost":2400,"tags":["ENCHANT","MAGE"]},"속삭이는 화관":{"cost":2250,"tags":["ENCHANT"]},"노래의 왕관":{"cost":2250,"tags":["ENCHANT"]},"세계 지도집":{"cost":400,"tags":["CATCHER","ENCHANT"]},"꿈 생성기":{"cost":0,"tags":["ENCHANT"]},"자자크의 세계가시":{"cost":0,"tags":["MAGE"]},"천상의 이의":{"cost":0,"tags":["CATCHER"]},"태양의 썰매":{"cost":0,"tags":["CATCHER"]},"피의 노래":{"cost":0,"tags":["CATCHER"]},"기동력의 장화":{"cost":1000,"tags":["BOOTS"]},"광전사의 군화":{"cost":1100,"tags":["BOOTS"]},"마법사의 신발":{"cost":1100,"tags":["BOOTS"]},"판금 장화":{"cost":1200,"tags":["BOOTS"]},"헤르메스의 발걸음":{"cost":1200,"tags":["BOOTS"]},"명석함의 아이오니아 장화":{"cost":900,"tags":["BOOTS"]},"신속의 장화":{"cost":1000,"tags":["BOOTS"]},"탐식의 군화":{"cost":1100,"tags":["BOOTS"]},"화염발톱 동료":{"cost":450,"tags":["PET"]},"이끼쿵쿵이 동료":{"cost":450,"tags":["PET"]},"바람돌이 동료":{"cost":450,"tags":["PET"]},"도란의 검":{"cost":450,"tags":["START"]},"도란의 방패":{"cost":450,"tags":["START"]},"도란의 반지":{"cost":400,"tags":["START"]},"도란의 활":{"cost":450,"tags":["START"]},"도란의 투구":{"cost":450,"tags":["START"]},"마법광학 장치 C44":{"cost":2800,"tags":["CRIT"]},"폭풍갈퀴":{"cost":3200,"tags":["CRIT"]},"마법공학 로켓 벨트":{"cost":2650,"tags":["ASSASSIN_AP","MAGE"]},"밴들피리":{"cost":2300,"tags":["CATCHER","TANK"]},"보루 파괴자":{"cost":3000,"tags":["ASSASSIN_AD"]}},"runes":{"정복자":{"tree":"정밀","tags":["BRUISER","DUELIST","ONHIT"]},"치명적 속도":{"tree":"정밀","tags":["CRIT","ONHIT"]},"집중 공격":{"tree":"정밀","tags":["CRIT","ONHIT","CASTER_AD"]},"기민한 발놀림":{"tree":"정밀","tags":["CRIT","ONHIT","DUELIST"]},"감전":{"tree":"지배","tags":["ASSASSIN_AD","ASSASSIN_AP","MAGE"]},"어둠의 수확":{"tree":"지배","tags":["ASSASSIN_AD","ASSASSIN_AP","MAGE"]},"칼날비":{"tree":"지배","tags":["ONHIT","CRIT","ASSASSIN_AD"]},"콩콩이 소환":{"tree":"마법","tags":["MAGE","ENCHANT"]},"신비로운 유성":{"tree":"마법","tags":["MAGE"]},"난입":{"tree":"마법","tags":["MAGE","BRUISER"]},"죽음불꽃 손길":{"tree":"마법","tags":["MAGE","ASSASSIN_AP"]},"폭풍전사의 포효":{"tree":"마법","tags":["MAGE","ASSASSIN_AP"]},"착취의 손아귀":{"tree":"결의","tags":["TANK","BRUISER"]},"여진":{"tree":"결의","tags":["CATCHER","TANK"]},"수호자":{"tree":"결의","tags":["CATCHER","ENCHANT"]},"선제공격":{"tree":"영감","tags":["MAGE","ASSASSIN_AD","ASSASSIN_AP","CASTER_AD"]},"빙결 강화":{"tree":"영감","tags":["CATCHER","ENCHANT"]},"봉인 풀린 주문서":{"tree":"영감","tags":["MAGE","CATCHER"]}},"overrides":{"징크스":["마법광학 장치 C44","루난의 허리케인","무한의 대검","치명적 속도"],"아칼리":["마법공학 총검","그림자불꽃","존야의 모래시계","감전"],"럭스":["루덴의 메아리","폭풍 쇄도","그림자불꽃","신비로운 유성"],"쓰레쉬":["강철의 솔라리 펜던트","기사의 맹세","지크의 융합","여진"],"가렌":["발걸음 분쇄기","삼위일체","망자의 갑옷","정복자"],"다리우스":["발걸음 분쇄기","스테락의 도전","망자의 갑옷","정복자"],"아트록스":["월식","갈라진 하늘","죽음의 무도","정복자"],"피오라":["굶주린 히드라","삼위일체","죽음의 무도","착취의 손아귀"],"카밀":["삼위일체","굶주린 히드라","스테락의 도전","착취의 손아귀"],"잭스":["삼위일체","갈라진 하늘","쇼진의 창","정복자"],"그웬":["내셔의 이빨","대균열","라바돈의 죽음모자","정복자"],"모데카이저":["라일라이의 수정홀","대균열","리안드리의 고통","정복자"],"말파이트":["태양불꽃 방패","얼어붙은 건틀릿","가시 갑옷","착취의 손아귀"],"오른":["태양불꽃 방패","잭쇼","얼어붙은 심장","착취의 손아귀"],"사이온":["강철심장","태양불꽃 방패","망자의 갑옷","착취의 손아귀"],"크산테":["얼어붙은 건틀릿","잭쇼","정령의 형상","착취의 손아귀"],"리 신":["월식","칠흑의 양날 도끼","죽음의 무도","정복자"],"비에고":["크라켄 학살자","징수의 총","불멸의 철갑궁","정복자"],"그레이브즈":["징수의 총","요우무의 유령검","무한의 대검","기민한 발놀림"],"바이":["삼위일체","갈라진 하늘","칠흑의 양날 도끼","정복자"],"마스터 이":["구인수의 격노검","몰락한 왕의 검","마법사의 최후","치명적 속도"],"아리":["루덴의 메아리","그림자불꽃","존야의 모래시계","감전"],"르블랑":["루덴의 메아리","그림자불꽃","라바돈의 죽음모자","감전"],"오리아나":["루덴의 메아리","라바돈의 죽음모자","존야의 모래시계","콩콩이 소환"],"빅토르":["루덴의 메아리","리치베인","라바돈의 죽음모자","선제공격"],"사일러스":["마법공학 총검","우주의 추진력","존야의 모래시계","정복자"],"제드":["월식","요우무의 유령검","세릴다의 원한","감전"],"야스오":["몰락한 왕의 검","무한의 대검","불멸의 철갑궁","치명적 속도"],"요네":["몰락한 왕의 검","무한의 대검","불멸의 철갑궁","치명적 속도"],"카타리나":["내셔의 이빨","그림자불꽃","존야의 모래시계","정복자"],"아지르":["내셔의 이빨","그림자불꽃","라바돈의 죽음모자","치명적 속도"],"케이틀린":["무한의 대검","고속 연사포","도미닉 경의 인사","치명적 속도"],"카이사":["크라켄 학살자","구인수의 격노검","내셔의 이빨","집중 공격"],"이즈리얼":["삼위일체","정수 약탈자","세릴다의 원한","집중 공격"],"애쉬":["크라켄 학살자","루난의 허리케인","무한의 대검","치명적 속도"],"진":["징수의 총","무한의 대검","고속 연사포","기민한 발놀림"],"바루스":["구인수의 격노검","몰락한 왕의 검","마법사의 최후","치명적 속도"],"미스 포츈":["징수의 총","무한의 대검","도미닉 경의 인사","집중 공격"],"루시안":["정수 약탈자","나보리 명멸검","무한의 대검","집중 공격"],"블리츠크랭크":["강철의 솔라리 펜던트","기사의 맹세","지크의 융합","여진"],"레오나":["강철의 솔라리 펜던트","기사의 맹세","지크의 융합","여진"],"유미":["월석 재생기","불타는 향로","새벽심장","콩콩이 소환"],"소라카":["월석 재생기","구원","새벽심장","콩콩이 소환"],"잔나":["슈렐리아의 군가","월석 재생기","구원","콩콩이 소환"],"룰루":["불타는 향로","월석 재생기","흐르는 물의 지팡이","콩콩이 소환"],"나미":["제국의 명령","월석 재생기","불타는 향로","콩콩이 소환"],"파이크":["요우무의 유령검","그림자 검","원칙의 원형낫","칼날비"],"세나":["그림자 검","고속 연사포","징수의 총","기민한 발놀림"],"질리언":["슈렐리아의 군가","구원","월석 재생기","콩콩이 소환"],"유나라":["마법광학 장치 C44","루난의 허리케인","무한의 대검","치명적 속도"],"멜":["루덴의 메아리","그림자불꽃","라바돈의 죽음모자","신비로운 유성"],"자헨":["삼위일체","갈라진 하늘","죽음의 무도","정복자"],"로크":["폭풍 쇄도","리치베인","그림자불꽃","감전"]}};
 
 // Official Riot Data Dragon art: original art URLs, never bundled or copied.
@@ -131,13 +195,24 @@ async function loadChampionArt(){
   const json=await response.json();let matches=0;
   for(const obj of Object.values(json.data||{})){
    const src=`https://ddragon.leagueoflegends.com/cdn/${version}/img/champion/${encodeURIComponent(obj.image.full)}`;
-   CHAMP_ART[normChamp(obj.name)]=src;
+   CHAMP_ART[normChamp(obj.name)]=src; CHAMP_BASE[normChamp(obj.name)]=obj;
   }
   // Names occasionally differ between client localization and in-game nicknames.
   const alias={'누누와윌럼프':'누누와윌럼프','문도박사':'문도박사','자르반4세':'자르반4세','레나타글라스크':'레나타글라스크','아우렐리온솔':'아우렐리온솔'};
   for(const [a,b] of Object.entries(alias))if(CHAMP_ART[b])CHAMP_ART[a]=CHAMP_ART[b];
   matches=Object.keys(DB.roster).filter(name=>CHAMP_ART[normChamp(name)]).length;
-  champArtVersion=version;render();
+  champArtVersion=version;
+   // Load accurate current item stats, item art and passive descriptions from the same patch.
+   try{
+    const rr=await fetch(`https://ddragon.leagueoflegends.com/cdn/${version}/data/ko_KR/item.json`);
+    if(rr.ok){const raw=await rr.json();for(const [id,it] of Object.entries(raw.data||{})){
+      if(!it?.name||!it.image?.full)continue;
+      const k=normItem(it.name);const old=ITEM_ASSETS[k];
+      const entry={id,name:it.name,stats:it.stats||{},description:stripHtml(it.description),gold:it.gold?.total||0,url:`https://ddragon.leagueoflegends.com/cdn/${version}/img/item/${encodeURIComponent(it.image.full)}`};
+      if(!old||(!it.inStore&&old.inStore)||(it.gold?.purchasable&&!(old.purchasable))){ITEM_ASSETS[k]=entry;entry.inStore=!!it.inStore;entry.purchasable=!!it.gold?.purchasable;}
+    }}
+   }catch(err){console.warn('아이템 상세 데이터는 추정 모델을 사용합니다.',String(err))}
+   render();
   console.info('Riot portraits mapped:',matches,'of',Object.keys(DB.roster).length,'version:',version);
  }catch(err){console.warn('초상화 서버를 사용할 수 없습니다. 텍스트 프로필로 실행합니다.',String(err));}
 }
@@ -167,7 +242,7 @@ document.addEventListener('click',e=>{
  const t=e.target.closest('[data-song]');if(t)startMusic(Number(t.dataset.song));
  if(e.target.closest('#musicStop')){document.getElementById('musicFrameHost').innerHTML='<div class="inner" style="text-align:center">음악 재생을 종료했습니다.</div>';activeMusic=-1;musicUI();}
 });
-document.addEventListener('error',e=>{if(e.target.matches?.('.portrait-shell img')){e.target.remove()}},true);
+document.addEventListener('error',e=>{if(e.target.matches?.('.portrait-shell img, .item-icon img')){e.target.remove()}},true);
 const ROLES=['TOP','JUNGLE','MID','BOT','SUPPORT'],RN={TOP:'탑',JUNGLE:'정글',MID:'미드',BOT:'바텀',SUPPORT:'서포터'},EM={TOP:'♜',JUNGLE:'♣',MID:'✦',BOT:'♛',SUPPORT:'❖'};
 const NAV=[['home','◈','운영 대시보드'],['patch','⚒','패치 스튜디오'],['meta','⌁','메타 통계'],['champ','♛','챔피언 · 빌드'],['item','⬡','아이템 · 룬'],['quest','✧','라인별 임무'],['history','▤','패치 기록']];
 const CLNAME={TANK:'탱커',BRUISER:'브루저',DUELIST:'스커미셔',ASSASSIN_AD:'AD 암살자',ASSASSIN_AP:'AP 암살자',CRIT:'치명타 딜러',ONHIT:'온힛 딜러',CASTER_AD:'스킬 딜러',MAGE:'메이지',ENCHANT:'유틸 서포터',CATCHER:'이니시 서포터'};
@@ -177,8 +252,85 @@ const ROLE_RULE={TOP:'라인 미니언·포탑·처치 관여·체류시간을 �
 const PRESETS={CRIT:['마법광학 장치 C44','무한의 대검','루난의 허리케인','도미닉 경의 인사'],ONHIT:['몰락한 왕의 검','구인수의 격노검','마법사의 최후','크라켄 학살자'],BRUISER:['발걸음 분쇄기','칠흑의 양날 도끼','갈라진 하늘','죽음의 무도'],DUELIST:['삼위일체','몰락한 왕의 검','갈라진 하늘','굶주린 히드라'],TANK:['태양불꽃 방패','잭쇼','가시 갑옷','정령의 형상'],MAGE:['루덴의 메아리','그림자불꽃','라바돈의 죽음모자','존야의 모래시계'],ASSASSIN_AD:['월식','요우무의 유령검','세릴다의 원한','오만'],ASSASSIN_AP:['폭풍 쇄도','리치베인','존야의 모래시계','라바돈의 죽음모자'],CASTER_AD:['삼위일체','정수 약탈자','세릴다의 원한','무라마나'],ENCHANT:['월석 재생기','불타는 향로','구원','슈렐리아의 군가'],CATCHER:['강철의 솔라리 펜던트','기사의 맹세','지크의 융합','슈렐리아의 군가']};
 const SIG_RUNE={CRIT:'치명적 속도',ONHIT:'치명적 속도',BRUISER:'정복자',DUELIST:'정복자',TANK:'착취의 손아귀',MAGE:'신비로운 유성',ASSASSIN_AD:'감전',ASSASSIN_AP:'감전',CASTER_AD:'집중 공격',ENCHANT:'콩콩이 소환',CATCHER:'여진'};
 const VERIFIED=new Set(['징크스','아칼리','럭스']);
-const DEFAULT_PATCH={type:'champ',target:'징크스',axis:'damage',size:-1};
-const AXES={champ:[['damage','기본 화력 / 스킬 계수'],['durability','생존력 / 체력'],['mobility','기동성 / 재사용 대기시간']],item:[['power','주요 능력치 / 효율'],['cost','아이템 구매 비용']],rune:[['power','룬 효과 강도']],quest:[['reward','완료 보상 강도'],['speed','임무 완료 속도']]};
+const DEFAULT_PATCH={type:'champ',target:'징크스',axis:'ad',size:-1};
+const CHAMP_STATS={
+ hp:['기본 체력',40,'체력'],hpregen:['기본 체력 재생',1.5,'5초당 HP'],hpGrowth:['레벨당 체력',6,'HP/레벨'],
+ ad:['기본 공격력',3,'공격력'],adGrowth:['레벨당 공격력',.5,'AD/레벨'],as:['기본 공격속도 증가',5,'%'],asGrowth:['레벨당 공속 증가',.6,'%/레벨'],
+ armor:['기본 방어력',4,'방어력'],mr:['기본 마법 저항력',4,'마저'],movespeed:['기본 이동속도',5,'이속'],attackrange:['기본 사거리',25,'사거리'],
+ mana:['기본 마나',70,'마나'],manaregen:['마나 재생',1.5,'5초당 마나'],
+ qdamage:['Q 스킬 피해량',8,'피해량'],qcooldown:['Q 재사용 대기시간',.5,'초'],wdamage:['W 스킬 피해량',8,'피해량'],wcooldown:['W 재사용 대기시간',.5,'초'],
+ edamage:['E 스킬 피해량',8,'피해량'],ecooldown:['E 재사용 대기시간',.5,'초'],rdamage:['R 궁극기 피해량',18,'피해량'],rcooldown:['R 궁극기 재사용 대기시간',5,'초'],
+ damage:['기존 호환 · 전반적 화력',1,'단계'],durability:['기존 호환 · 전반적 생존력',1,'단계'],mobility:['기존 호환 · 전반적 기동성',1,'단계']};
+const ITEM_STATS={
+ cost:['구매 가격',75,'골드'],attackdamage:['공격력',5,'AD'],abilitypower:['주문력',8,'AP'],attackspeed:['공격속도',5,'%'],health:['체력',60,'HP'],armor:['방어력',5,'방어력'],mr:['마법 저항력',5,'마저'],
+ movespeed:['이동속도',5,'이속'],critchance:['치명타 확률',5,'%'],haste:['스킬 가속',5,'가속'],mana:['마나',100,'마나'],lifesteal:['생명력 흡수',2,'%'],
+ lethality:['물리 관통력',3,'물관'],magicpen:['마법 관통력',3,'마관'],onhit:['적중 시 추가 피해',5,'%'],shield:['보호막 효과',5,'%'],healing:['회복 효과',5,'%'],burn:['지속 피해 효과',5,'%'],
+ slow:['둔화 효과',5,'%'],active:['사용 효과',5,'%'],passive:['고유 지속 효과',5,'%'],power:['기존 호환 · 전체 효율',1,'단계']};
+const AXES={champ:Object.entries(CHAMP_STATS).map(([k,v])=>[k,v[0]]),item:Object.entries(ITEM_STATS).map(([k,v])=>[k,v[0]]),rune:[['power','룬 효과 강도']],quest:[['reward','완료 보상 강도'],['speed','임무 완료 속도']]};
+const CHAMP_WEIGHTS={hp:.31,hpregen:.14,hpGrowth:.27,ad:.65,adGrowth:.37,as:.58,asGrowth:.29,armor:.36,mr:.32,movespeed:.55,attackrange:.63,mana:.13,manaregen:.11,qdamage:.34,wdamage:.34,edamage:.34,rdamage:.37,qcooldown:.42,wcooldown:.42,ecooldown:.42,rcooldown:.42};
+const ITEM_WEIGHTS={attackdamage:.52,abilitypower:.52,attackspeed:.49,health:.41,armor:.36,mr:.36,movespeed:.52,critchance:.48,haste:.44,mana:.19,lifesteal:.41,lethality:.46,magicpen:.46,onhit:.47,shield:.38,healing:.38,burn:.43,slow:.36,active:.43,passive:.44};
+const ITEM_BASE=Object.create(null),CHAMP_BASE=Object.create(null),ITEM_ASSETS=Object.create(null);
+const normItem=n=>String(n||'').normalize('NFKC').toLowerCase().replace(/[\s\p{P}\p{S}]/gu,'');
+function itemIcon(name,size='mini'){
+ const data=ITEM_ASSETS[normItem(name)];
+ return `<span class="item-icon ${size}" aria-label="${esc(name)} 아이템 아이콘"><b>◈</b>${data?.url?`<img loading="lazy" alt="${esc(name)}" src="${esc(data.url)}">`:''}</span>`;
+}
+const ITEM_STAT_FIELD={FlatPhysicalDamageMod:'attackdamage',FlatMagicDamageMod:'abilitypower',PercentAttackSpeedMod:'attackspeed',FlatHPPoolMod:'health',FlatArmorMod:'armor',FlatSpellBlockMod:'mr',PercentMovementSpeedMod:'movespeed',FlatMovementSpeedMod:'movespeed',FlatCritChanceMod:'critchance',PercentLifeStealMod:'lifesteal',FlatMPPoolMod:'mana'};
+const CHAMP_BASE_FIELD={hp:'hp',hpregen:'hpregen',hpGrowth:'hpperlevel',ad:'attackdamage',adGrowth:'attackdamageperlevel',as:'attackspeed',asGrowth:'attackspeedperlevel',armor:'armor',mr:'spellblock',movespeed:'movespeed',attackrange:'attackrange',mana:'mp',manaregen:'mpregen'};
+const ITEM_EFFECT_WORDS={onhit:/적중 시|기본 공격 시|기본 공격 적중/,shield:/보호막/,healing:/회복|치유/,burn:/불태|화상|지속 피해|매초 피해/,slow:/둔화|느려/,active:/사용 효과|사용 시|사용:/,haste:/스킬 가속/,lifesteal:/생명력 흡수/,lethality:/물리 관통|물리 관통력/,magicpen:/마법 관통|마법 저항력 관통/};
+function stripHtml(v){return String(v||'').replace(/<[^>]*>/g,' ').replace(/&nbsp;/g,' ').replace(/&amp;/g,'&').replace(/\s+/g,' ').trim()}
+function inferredItemAxes(name){
+ const it=DB.items[name];if(!it)return ['cost'];
+ const k=it.tags||[], out=new Set(['cost']);
+ const ap=k.some(x=>['MAGE','ASSASSIN_AP','ENCHANT'].includes(x)),ad=k.some(x=>['CRIT','ONHIT','BRUISER','DUELIST','ASSASSIN_AD','CASTER_AD'].includes(x));
+ const tank=k.some(x=>['TANK','CATCHER'].includes(x));
+ if(ad)out.add('attackdamage');if(ap)out.add('abilitypower');
+ if(tank||k.includes('BRUISER')){out.add('health');out.add('armor');out.add('mr')}
+ if(k.includes('CRIT'))out.add('critchance');if(k.includes('ONHIT')){out.add('attackspeed');out.add('onhit')}
+ if(k.includes('ENCHANT')){out.add('healing');out.add('shield');out.add('haste')}
+ if(k.includes('ASSASSIN_AD'))out.add('lethality');if(k.includes('ASSASSIN_AP'))out.add('magicpen');
+ if(k.includes('BOOTS')){out.add('movespeed');if(/마법|헤르메스|판금|닌자/.test(name)){out.add('mr');out.add('armor')}}
+ if(/무한의 대검/.test(name))out.add('passive');
+ if(/리안드리|태양불꽃|악의|불꽃/.test(name))out.add('burn');
+ if(/얼어붙|라일라이|세릴다/.test(name))out.add('slow');
+ if(/몰락한 왕|구인수|크라켄|마법사의 최후/.test(name))out.add('onhit');
+ if(/존야|수호 천사|구원|솔라리/.test(name))out.add('active');
+ out.add('passive');return [...out];
+}
+function axesFor(type,target){
+ if(type==='champ')return AXES.champ.filter(([k])=>!(k==='mana'||k==='manaregen')||(CHAMP_BASE[normChamp(target)]?.stats?.mp??500)>0);
+ if(type!=='item')return AXES[type]||[];
+ const data=ITEM_ASSETS[normItem(target)],out=new Set(inferredItemAxes(target));
+ if(data){for(const [key,v] of Object.entries(data.stats||{}))if(Number(v)>0&&ITEM_STAT_FIELD[key])out.add(ITEM_STAT_FIELD[key]);
+  for(const [key,expr] of Object.entries(ITEM_EFFECT_WORDS))if(expr.test(data.description||''))out.add(key);
+ }
+ return AXES.item.filter(([k])=>out.has(k)||k==='power');
+}
+function effectNote(p){
+ const m=p.type==='champ'?CHAMP_STATS[p.axis]:p.type==='item'?ITEM_STATS[p.axis]:null;
+ if(!m)return '';
+ let amount=m[1]*Math.abs(p.size),unit=m[2];
+ if(p.type==='item'&&p.axis==='cost')return `${p.size>0?'−':'+'}${amount} 골드`;
+ if(/cooldown$/.test(p.axis))return `${p.size>0?'−':'+'}${amount}초`;
+ return `${p.size>0?'+':'−'}${amount}${unit==='%'?'%':` ${unit}`}`;
+}
+function currentStat(p){
+ const old=getTune(state,p.type,p.target),count=Number(old[p.axis])||0;
+ if(p.type==='champ'){
+  const val=CHAMP_BASE[normChamp(p.target)]?.stats?.[CHAMP_BASE_FIELD[p.axis]];
+  const label=CHAMP_STATS[p.axis];
+  if(Number.isFinite(val))return `공식 기본값 ${fmt(val,1)}${label?.[2]==='%'?'%':''} · 현재 게임 누적 ${count>0?'+':''}${count}단계`;
+  return `현재 게임 누적 ${count>0?'+':''}${count}단계 · 기본 수치는 공식 데이터 수신 시 표시`;
+ }
+ if(p.type==='item'){
+  let it=ITEM_ASSETS[normItem(p.target)];
+  if(p.axis==='cost')return `기본 ${DB.items[p.target]?.cost||0}골드 · 현재 ${DB.items[p.target]?.cost-count*75}골드`;
+  const val=Object.entries(it?.stats||{}).find(([k])=>ITEM_STAT_FIELD[k]===p.axis)?.[1];
+  if(Number.isFinite(Number(val)))return `공식 능력치 ${val} · 게임 누적 ${count>0?'+':''}${count}단계`;
+  return `게임 누적 ${count>0?'+':''}${count}단계 · 고유 효과는 시뮬레이션 계수로 조정`;
+ }
+ return `기존 조정 ${count>0?'+':''}${count}단계`;
+}
 const TYPE_LABEL={champ:'챔피언',item:'아이템',rune:'핵심 룬',quest:'라인 임무'};
 const clamp=(n,min,max)=>Math.max(min,Math.min(max,n));
 const hf=s=>{let x=2166136261;for(let i=0;i<s.length;i++){x^=s.charCodeAt(i);x=Math.imul(x,16777619)}return x>>>0};
@@ -235,12 +387,19 @@ function migrateScoreAndMeta(st){
 }
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 function fresh(){
- const st={version:2,week:0,season:1,trust:Math.floor(62+Math.random()*19),fan:Math.floor(55+Math.random()*26),budget:Math.floor(85+Math.random()*31),score:0,initialScore:null,scoreVersion:7,startingMeta:createStartingMeta(),tab:'home',champSelected:'징크스',champFilter:'ALL',champSort:'pick',champQuery:'',itemFilter:'ALL',itemQuery:'',sortRole:'ALL',sortCol:'pick',sortDesc:true,search:'',patch:{...DEFAULT_PATCH},patchQueue:[],patchSearch:'',buildTrends:[],recommendSelected:null,commentSort:'popular',communityVotes:{},runeSelected:'치명적 속도',itemSelected:'마법광학 장치 C44',tunes:{champ:{},item:{},rune:{},quest:{}},history:[],event:null,eventLog:[],lastImpact:null,notifications:[]};
+ const st={version:2,week:0,season:1,trust:Math.floor(62+Math.random()*19),fan:Math.floor(55+Math.random()*26),budget:Math.floor(85+Math.random()*31),score:0,initialScore:null,scoreVersion:7,startingMeta:createStartingMeta(),tab:'home',champSelected:'징크스',champFilter:'ALL',champSort:'pick',champQuery:'',itemFilter:'ALL',itemQuery:'',sortRole:'ALL',sortCol:'pick',sortDesc:true,search:'',patch:{...DEFAULT_PATCH},patchQueue:[],patchSearch:'',buildTrends:[],recommendSelected:null,commentSort:'popular',communityShowAll:false,communityVotes:{},runeSelected:'치명적 속도',itemSelected:'마법광학 장치 C44',tunes:{champ:{},item:{},rune:{},quest:{}},history:[],event:null,eventLog:[],lastImpact:null,notifications:[]};
  st.initialScore=startingScoreFor(st);st.score=st.initialScore;
  return st;
 }
 let state;try{state=JSON.parse(localStorage.getItem('patchOne2026'))||fresh();if(!state||state.version!==2)state=fresh()}catch(e){state=fresh()}
 migrateScoreAndMeta(state);
+function migratePriceSemantics(st){
+ if(st.priceSemantics===9)return;
+ for(const t of Object.values(st.tunes?.item||{}))if(typeof t.cost==='number')t.cost=-t.cost;
+ for(const p of [...(st.patchQueue||[]),st.patch])if(p?.type==='item'&&p.axis==='cost')p.size=-p.size;
+ st.priceSemantics=9;
+}
+migratePriceSemantics(state);
 if(!state.patch||!AXES[state.patch.type])state.patch={...DEFAULT_PATCH};
 if(!Array.isArray(state.patchQueue))state.patchQueue=[];
 if(typeof state.patchSearch!=='string')state.patchSearch='';
@@ -288,7 +447,7 @@ function creatorBuildEvent(st){
 function creatorStats(title,before,after){const winDelta=after.win-before.win,pickDelta=after.pick-before.pick;return `<div class="creator-stats"><div class="creator-stat"><small>${title} · 픽률</small><strong>${fmt(before.pick,2)}% → ${fmt(after.pick,2)}%</strong><em class="${pickDelta>=0?'value-positive':'value-negative'}">${pickDelta>=0?'+':''}${fmt(pickDelta,2)}%p</em></div><div class="creator-stat"><small>${title} · 승률</small><strong>${fmt(before.win,2)}% → ${fmt(after.win,2)}%</strong><em class="${winDelta>=0?'value-positive':'value-negative'}">${winDelta>=0?'+':''}${fmt(winDelta,2)}%p</em></div></div>`}
 function creatorRecentUI(){let logs=(state.eventLog||[]).filter(l=>l.report).slice(-3).reverse();if(!logs.length)return '';return `<div class="panel" style="margin-top:16px"><h3>📺 유튜버 빌드 유행 기록 <small class="muted">게임 내 가상 시뮬레이션</small></h3>${logs.map(l=>`<div class="logline"><div class="champ-line">${portrait(l.report.build.ch,'mini')}<strong>${esc(l.report.build.ch)} · ${RN[l.report.build.role]}</strong><span class="tag">${esc(l.report.build.channel)}</span></div><p class="help">룬: ${esc(l.report.build.rune)} · 아이템: ${l.report.build.items.map(esc).join(' → ')}</p>${creatorStats('확산 후',l.report.before,l.report.after)}<div class="creator-foot">${esc(l.choice)} · ${l.week}주차 · 수치는 당시 게임 내 가상 메타 기준</div></div>`).join('')}</div>`}
 function itemRanking(ch,st,role=DB.roster[ch][0]){const typ=DB.classes[ch],sig=rolePriority(ch,role),trend=activeCreatorTrend(st,ch,role);const prefer=[...new Set([...sig.slice(0,3),...PRESETS[typ]])];let arr=Object.entries(DB.items).filter(([name,it])=>((it.cost>1000&&it.cost<3600)||(role==='SUPPORT'&&it.cost===0))&&!it.tags.includes('BOOTS')&&!it.tags.includes('START'));
- arr=arr.map(([name,it])=>{let base=it.tags.includes(typ)?1.85:-.50;let own=prefer.indexOf(name);if(own>=0)base+=4.4-own*.65;let tw=getTune(st,'item',name);let pow=(tw.power||0)*.55-(tw.cost||0)*.36;let flair=(f01(ch+name+'aff')-.5)*.5;let featured=trend?.items.indexOf(name)??-1;let trendBoost=featured>=0?(10-featured*1.7)*trendStrength(trend,st):0;return {name,score:base+pow+flair+trendBoost,affinity:base,mod:pow}}).sort((a,b)=>b.score-a.score);return arr.slice(0,6)}
+ arr=arr.map(([name,it])=>{let base=it.tags.includes(typ)?1.85:-.50;let own=prefer.indexOf(name);if(own>=0)base+=4.4-own*.65;let tw=getTune(st,'item',name);let pow=(tw.power||0)*.55+(tw.cost||0)*.36+Object.entries(tw).reduce((a,[axis,steps])=>a+(ITEM_WEIGHTS[axis]||0)*Number(steps||0),0);let flair=(f01(ch+name+'aff')-.5)*.5;let featured=trend?.items.indexOf(name)??-1;let trendBoost=featured>=0?(10-featured*1.7)*trendStrength(trend,st):0;return {name,score:base+pow+flair+trendBoost,affinity:base,mod:pow}}).sort((a,b)=>b.score-a.score);return arr.slice(0,6)}
 function runeRanking(ch,st,role=DB.roster[ch][0]){const typ=DB.classes[ch],main=signature(ch)[3],trend=activeCreatorTrend(st,ch,role);return Object.entries(DB.runes).map(([name,r])=>({name,score:(r.tags.includes(typ)?1.6:-.65)+(name===main?3.5:0)+(trend&&trend.rune===name?8*trendStrength(trend,st):0)+(axisVal(st,'rune',name,'power'))*.66+(f01(ch+name+'r')-.5)*.3,tree:r.tree})).sort((a,b)=>b.score-a.score).slice(0,5)}
 function popularity(ch,role,st){let opening=st.startingMeta||{},seed=opening.seed||0;let h=opening.legacy?f01(ch+role+'pop'):f01(seed+':'+ch+role+'pop'),k=DB.classes[ch];let b=1.8+2.2*h;if(role==='TOP'&&(k==='TANK'||k==='BRUISER'))b+=.25;if(role==='SUPPORT'&&k==='ENCHANT')b+=.2;if(role==='BOT'&&k==='MAGE')b-=.8;if(DB.roster[ch][0]!==role)b-=1.05;
  if(!opening.legacy){if(opening.hot?.includes(ch))b+=.68;if(opening.cold?.includes(ch))b-=.24;}
@@ -304,7 +463,7 @@ function baseWR(ch,role,st){
  }
  let extra=({'징크스':1.05,'쓰레쉬':1.5,'말파이트':1.3,'블리츠크랭크':1.2,'르블랑':1.0,'다리우스':.8,'레오나':1.1,'마스터 이':1.1,'샤코':1.0})[ch]||0;return n+extra}
 function metaData(st){const result=[];for(let role of ROLES){const group=[];for(let ch of Object.keys(DB.roster))if(DB.roster[ch].includes(role)){
- let it=itemRanking(ch,st,role),run=runeRanking(ch,st,role),trend=activeCreatorTrend(st,ch,role);let cht=getTune(st,'champ',ch);let itemPower=it.slice(0,3).reduce((v,a)=>v+a.mod,0)*.67;let runePower=axisVal(st,'rune',run[0].name,'power')*.48+(role==='JUNGLE'?axisVal(st,'item',junglePet(ch),'power')*.33-axisVal(st,'item',junglePet(ch),'cost')*.22:0);let champPower=(cht.damage||0)*.78+(cht.durability||0)*.52+(cht.mobility||0)*.46;let quest=axisVal(st,'quest',role,'reward')*.34+axisVal(st,'quest',role,'speed')*.22;
+ let it=itemRanking(ch,st,role),run=runeRanking(ch,st,role),trend=activeCreatorTrend(st,ch,role);let cht=getTune(st,'champ',ch);let itemPower=it.slice(0,3).reduce((v,a)=>v+a.mod,0)*.67;let runePower=axisVal(st,'rune',run[0].name,'power')*.48+(role==='JUNGLE'?axisVal(st,'item',junglePet(ch),'power')*.33+axisVal(st,'item',junglePet(ch),'cost')*.22:0);let champPower=(cht.damage||0)*.78+(cht.durability||0)*.52+(cht.mobility||0)*.46+Object.entries(cht).reduce((a,[axis,steps])=>a+(CHAMP_WEIGHTS[axis]||0)*Number(steps||0),0);let quest=axisVal(st,'quest',role,'reward')*.34+axisVal(st,'quest',role,'speed')*.22;
  let trendEffect=trend?trendStrength(trend,st):0;
  let win=clamp(50+baseWR(ch,role,st)+itemPower+runePower+champPower+quest+trendEffect*(trend?.winBonus||0),42,59), raw=Math.exp(popularity(ch,role,st)+(.16*(win-50))+(f01(ch+role+'trend'+st.week)-.5)*.23+trendEffect*(trend?.pickBoost||0));
  group.push({ch,role,win,raw,build:it,runes:run,quest,power:champPower+itemPower+runePower});
@@ -343,7 +502,7 @@ ${openingInfo}
 ${creatorRecentUI()}<div class="section-head"><h2>최근 패치 속보</h2><button class="btn tiny ghost" data-act="tab" data-val="history">전체 기록 ↗</button></div><div class="panel">${state.history.length?state.history.slice(-4).reverse().map(h=>`<div class="logline"><span class="tag">${esc(h.version)}</span> &nbsp; <b>${esc(h.note)}</b><br><span class="muted">메타 점수 ${h.healthBefore} → ${h.healthAfter} · 운영 ${h.scoreDelta===undefined?'기록 없음':(h.scoreDelta>=0?'+':'')+h.scoreDelta}점 · 신뢰 ${h.trustAfter}</span>${h.postReaction?`<div class="post-reaction"><b>💬 ${esc(h.postReaction.champ)} 패치 후 반응</b><p>${esc(h.postReaction.comment)}</p></div>`:''}</div>`).join(''):`<div class="help">아직 발행한 패치가 없습니다. 패치 스튜디오에서 첫 변경을 적용해보세요.</div>`}</div>`}
 function miniList(arr,key){return `<div class="impact-list">${arr.map((x,i)=>`<div class="impact-row" style="cursor:pointer" data-act="showChamp" data-val="${esc(x.ch)}"><span class="champ-line"><b style="color:#c9ad74;margin-right:2px">${i+1}</b>${portrait(x.ch,'mini')}<span class="nameblock"><strong>${esc(x.ch)}</strong> <small class="muted">${RN[x.role]}</small></span></span><span class="mono ${key==='win'?(x.win>52?'value-positive':''):''}">${fmt(x[key],2)}%</span></div>`).join('')}</div>`}
 function targetList(type){return type==='champ'?Object.keys(DB.roster).sort((a,b)=>a.localeCompare(b,'ko')):type==='item'?Object.keys(DB.items).filter(k=>DB.items[k].cost>0).sort((a,b)=>a.localeCompare(b,'ko')):type==='rune'?Object.keys(DB.runes):ROLES}
-function patchNote(p){const o=AXES[p.type].find(a=>a[0]===p.axis),dv=Math.abs(p.size),cost=p.type==='item'&&p.axis==='cost',adj=cost?(p.size>0?'가격 인상 · 너프':'가격 인하 · 버프'):(p.size>0?'상향':'하향');return `${p.type==='quest'?RN[p.target]+' 임무':p.target} · ${o?o[1]:p.axis} ${adj} ${dv}단계`}
+function patchNote(p){const o=AXES[p.type].find(a=>a[0]===p.axis),dv=Math.abs(p.size),cost=p.type==='item'&&p.axis==='cost',adj=cost?(p.size>0?'가격 인하 · 버프':'가격 인상 · 너프'):(p.size>0?'버프':'너프');return `${p.type==='quest'?RN[p.target]+' 임무':p.target} · ${o?o[1]:p.axis} ${adj} ${effectNote(p)||dv+'단계'}`}
 function validPatch(p){return !!(p&&Object.prototype.hasOwnProperty.call(AXES,p.type)&&targetList(p.type).includes(p.target)&&AXES[p.type].some(a=>a[0]===p.axis)&&Number.isInteger(p.size)&&[-3,-2,-1,1,2,3].includes(p.size))}
 function patchPreview(meta){let before=meta,copy=structuredCloneSafe(state);for(const p of (state.patchQueue||[])){if(validPatch(p))applyPatchTo(copy,p)}let after=metaData(copy),beforeMap=new Map(before.map(v=>[v.ch+'#'+v.role,v]));let impact=after.map(x=>({...x,delta:x.win-(beforeMap.get(x.ch+'#'+x.role)?.win??x.win)})).filter(x=>Math.abs(x.delta)>.05).sort((a,b)=>Math.abs(b.delta)-Math.abs(a.delta));return {impact,bH:calcHealth(before),aH:calcHealth(after)}}
 function structuredCloneSafe(s){return JSON.parse(JSON.stringify(s))}
@@ -367,40 +526,283 @@ function communityTone(x){
  const nerf=clamp(Math.round(38+(x.win-50)*11+(x.ban-10)*.8+(x.pick-5)*.35),8,94);
  return {anger,over,under,nerf};
 }
+// V10: Contextual, combinatorial fictional forum simulator.
+// Posts are newly composed and seeded per career / week / champion / position / patch setting.
+// No real posts or identities are copied; the style mix is inspired by public LOL discussion formats.
+const FORUM_REPLY_IDS=['vent','short','lane','numbers','otp','craft','balance','troll','counter','skeptic','argue','observer'];
+function communityVoteSeed(x){
+ const p=state.patch||{};
+ const patchPart=p.type==='champ'&&p.target===x.ch?`${p.axis}:${p.size}`:'none';
+ return `${state.startingMeta?.seed||0}:${state.week}:${x.ch}:${x.role}:editor:${patchPart}`;
+}
 function communityComments(x,mode='editor',patch=null){
- const tone=communityTone(x),ch=x.ch,win=fmt(x.win,2),ban=fmt(x.ban,1),pick=fmt(x.pick,1),role=RN[x.role];
- const rune=x.runes[0]?.name||'룬',item=x.build[0]?.name||'주력템';
- const seed=`${state.startingMeta?.seed||0}:${state.week}:${ch}:${x.role}:${mode}`;
- const line=(arr,k)=>pickLine(arr,seed+':'+k);
- const angry=tone.over?[`${ch} 이 개사기챔 좀 어떻게 해라 ㅅㅂ ㅋㅋ`,`${ch} 또 안 건드림? 솔랭에서 만나면 개빡침`,`${ch} 승률 ${win}%인데 이게 밸런스냐? 너프 좀 ㅋㅋ`,`상대 ${ch} 나오면 걍 밴 안 한 내 잘못임?`]:tone.under?[`${ch} 승률 ${win}% ㅋㅋㅋ 챔피언 관짝에 넣어놨네`,`이 정도면 ${ch} 유저들 진짜 불쌍함. 버프 좀 해라`,`솔직히 ${ch} 지금 너무 구린데 언제 살려줌?`]:[`${ch} 막 사기는 아닌데 상대하면 여전히 짜증나긴 함 ㅋㅋ`,`${ch}는 지표만 보면 무난한데 체감은 좀 다름`,`너프보단 다른 사기챔부터 좀 잡자`];
- const stats=tone.over?[`승률 ${win}, 밴률 ${ban}인데 왜 냅두는 거임? 말이 안 되네`,`픽률 ${pick}%에 이 승률이면 숙련자 전용챔 변명도 못 하겠는데`,`승률만 볼 게 아니라 밴률 ${ban}%도 봐야지 ㅋㅋ`]:tone.under?[`승률 ${win}%면 뭘 해도 애매하다는 거 아니냐`,`픽률도 ${pick}%인데 이 챔을 또 너프하면 진짜 망겜이지`,`저 승률이면 한 번쯤 버프할 만하잖아`]:[`승률 ${win}%인데 개사기 소리는 오바 아님?`,`밴률 ${ban}%면 성능보다 상대하기 싫은 챔이라는 뜻일 수도`,`픽률 ${pick}%면 픽하는 사람 숙련도도 좀 봐야 함`];
- const master=tone.over?[`${ch} 원챔인데 그렇게 사기면 니들도 해보셈 ㅋㅋ`,`우리 ${ch} 또 억까당하네. 카운터는 생각 안 함?`,`너프는 이해하는데 3단계로 박살내는 건 좀 아니지`]:tone.under?[`${ch} 원챔 입장에서는 진짜 숨 좀 쉬게 해줬으면`,`이제 ${ch}로 라인전 버티는 것도 힘듦. 버프 제발`,`장인들도 손 놓기 직전임. 진짜 한 번만 살려줘`]:[`${ch} 해본 사람은 알겠지만 생각보다 까다로움`,`상대 입장에선 싫을 수 있는데 무조건 너프할 정도는 아님`,`딱 현상 유지가 나을 듯. 건드리면 또 난리 남`];
- const build=[`${rune} 들고 ${item} 올리는 게 진짜 핵심인데 챔만 너프한다고 해결됨?`,`난 ${item}부터 손대야 된다고 봄. 이거 다른 챔도 같이 이득 보는 중`,`지금 ${rune} + ${item} 빌드가 문제인 거 아님?`,`${ch} 스킬보다 ${item} 시너지가 더 말썽인 듯`];
- const meme=tone.over?[`패치팀에 ${ch} 원챔 있냐? ㅋㅋㅋㅋ`,`걍 ${ch} 밴하고 다른 거 하는 게 정신건강에 좋음`,`매 판 ${ch} 보이는 거 실화냐 ㅋㅋㅋ`]:tone.under?[`${ch} 버프 소식 뜨면 잔치 열어야겠다`,`${ch} 픽하면 팀원들이 벌써 한숨 쉼 ㅋㅋ`,`제발 관짝 문 좀 열어줘라`]:[`또 ${ch}로 커뮤 불타네 ㅋㅋㅋ`,`패치 때마다 ${ch} 얘기 나오는 거 국룰`,`지표랑 체감 다른 챔 원탑인 듯`];
- const p=patch||state.patch;
- let patchMsg='';
- if(p?.type==='champ'&&p.target===ch){
-  if(p.size<0)patchMsg=Math.abs(p.size)>=3?`${ch} 3단계 너프? 개사기였어도 이건 관짝 직행 아니냐 ㅋㅋ`:
-   Math.abs(p.size)===1?`${ch} -1단계? 이 정도로 체감되긴 할까? ㅋㅋ`:`${ch} ${Math.abs(p.size)}단계 너프면 다음 주에 판도가 좀 바뀌겠네`;
-  else patchMsg=Math.abs(p.size)>=3?`${ch} 3단계 버프는 좀 무섭다. 다음 주 OP 예약 아님?`:
-   tone.over?`안 그래도 센 ${ch}를 또 버프한다고? ㅅㅂ 진짜?`:`${ch} 버프 드디어 오냐 ㅋㅋ 일단 지켜보자`;
- }else patchMsg=`${ch} 패치할 거면 ${rune}이랑 ${item}도 같이 봐야 하는 거 아님?`;
- const profiles=[
-  {id:'rage',names:['탑라인좀살려줘','밴카드모자람','솔랭탈출기원','억까좀그만','그마가는중'],text:line(angry,'rage'),side:'against'},
-  {id:'facts',names:['지표충은아님','승률표보는사람','통계좀보자','메타분석중'],text:line(stats,'stats'),side:tone.over?'against':tone.under?'for':'neutral'},
-  {id:'master',names:[`${ch}만함`,'원챔유저인데','장인정신','숙련도이슈'],text:line(master,'master'),side:'for'},
-  {id:'build',names:['템트리연구소','룬갈아타는중','솔랭빌드충','아이템학개론'],text:line(build,'build'),side:'neutral'},
-  {id:'patch',names:['패치노트중독','밸패누가함','수요일만기다림','다음패치제발'],text:patchMsg,side:tone.over&&p?.size>0?'against':'neutral'},
-  {id:'meme',names:['ㄹㅇㅋㅋ만침','협곡의망령','오늘도연패중','옵붕이123'],text:line(meme,'meme'),side:'against'}
+ const t=communityTone(x),p=patch||state.patch||{},ch=x.ch,role=RN[x.role]||'솔랭';
+ const win=fmt(x.win,2),ban=fmt(x.ban,1),pick=fmt(x.pick,1);
+ const rune=x.runes?.[0]?.name||'주력 룬',item=x.build?.[0]?.name||'첫 코어';
+ const other=x.build?.[1]?.name||'2코어',cl=CLNAME[DB.classes[ch]]||'챔피언';
+ const hasFinal=s=>{const c=s.charCodeAt(s.length-1);return c>=0xAC00&&c<=0xD7A3&&(c-0xAC00)%28!==0};
+ const topic=hasFinal(ch)?'은':'는',runeAnd=hasFinal(rune)?'이랑':'랑',runeSubject=hasFinal(rune)?'이':'가';
+ const statName=CHAMP_STATS[p.axis]?.[0]||p.axis||'기본 능력치';
+ const isNerf=p.type==='champ'&&p.target===ch&&p.size<0;
+ const isBuff=p.type==='champ'&&p.target===ch&&p.size>0;
+ const isBadNerf=isNerf&&t.under,isBadBuff=isBuff&&t.over;
+ const force=Math.abs(Number(p.size)||1);
+ const patchLine=isBadNerf?`${ch} 승률 ${win}%인데 ${statName} 너프가 맞냐?`:
+  isBadBuff?`이미 센 ${ch} ${statName}까지 올려준다고? 밸패팀 정신차려라`:
+  isNerf?`${statName} ${force}단계 너프`:
+  isBuff?`${statName} ${force}단계 버프`:
+  `${ch} 패치 얘기`;
+ const mood=t.over?'over':t.under?'under':'even';
+ const strength=t.anger>=75?'극대노':t.anger>=50?'불만':'혼합';
+ const ctx={ch,role,win,pick,ban,rune,item,other,cl,statName,force,patchLine};
+ const seed=`${state.startingMeta?.seed||0}:${state.week}:${ch}:${x.role}:${mode}:${p.type==='champ'&&p.target===ch?`${p.axis}:${p.size}`:'none'}`;
+ const h=(salt)=>f01(seed+':'+salt);
+ const take=(options,id,index=0)=>options[Math.min(options.length-1,Math.floor(h(id+':'+index)*options.length))];
+ const frag=(options,id)=>take(options,id);
+ const intro=frag(['','근데 ','솔직히 ','아니 ','진짜 ','ㄹㅇ ','내 생각엔 '],'int');
+ const ventPool=t.over?[
+  `${ch} 얘는 왜 아직도 멀쩡하냐 ㅅㅂ`,`${ch} 만날 때마다 짜증난다 진짜`,
+  `이딴 ${cl}가 승률 ${win}% 찍는 게 맞음?`,`${ch} 밴 풀리면 게임 시작하기 싫어짐`,
+  `${ch} 또 1티어임? 대체 언제 내려오냐`,`${ch} 이거 진짜 개사기 아니냐 ㅋㅋ`,
+  `상대 ${role} ${ch} 나왔을 때 한숨부터 나옴`,
+  `아오 ${ch}시치, 또 너냐`,
+  `이 개같은 ${ch} 좀 어떻게 해봐라`,
+  `이게 지금 정상이냐? ${ch} 밴률 ${ban}%라니`,
+  `탑이든 미드든 ${ch}만 보이면 뇌정지 온다`,
+  `애초에 ${ch} 상대로 라인전 자체가 불쾌함`,
+  `왜 ${ch}는 하고 싶은 거 다 해도 되는 거임`]:t.under?[
+  `${ch} 유저들 아직 살아 있냐`,`${ch} 승률 ${win}% 보고 어이없어서 들어왔다`,
+  `${ch} 이 상태에서 너프하면 ㄹㅇ 말 안 됨`,
+  `남들은 다 버프 받는데 ${ch}는 뭐하냐`,
+  `${ch} 픽하니까 로딩창부터 팀이 한숨 쉬더라`,
+  `${ch} 지금 약한 정도가 아니라 걍 슬픔`,
+  `이 똥챔을 어쩌다가 이렇게 만들어놨냐`,
+  `이젠 ${ch}로 이기는 사람이 신기함`,
+  `${ch} 인생 최저점 찍은 거 아님?`,
+  `버프 좀 줘라 제발, ${ch} 장인들 굶어 죽겠다`,
+  `${ch} 승률 이게 실화냐 ㅋㅋ`]:[
+  `${ch} 얘는 늘 말 많네`,`${ch} 체감이랑 승률이 왜 이리 다른 거 같지`,
+  `${ch}${topic} 잘하면 무섭긴 한데 개사기까진 아님`,
+  `지금 ${ch} 건드리면 멀쩡한 메타만 꼬일 듯`,
+  `솔직히 ${ch}는 상대법 알면 할 만하지 않음?`,
+  `${ch} 원챔이랑 일반 유저 체감 차이 큰 듯`,
+  `${ch} 억까도 좀 심한 것 같긴 함`,
+  `이 정도면 무난한 챔 아니냐`,
+  `${ch}만 보면 다들 발작버튼 눌리는 거 웃김`,
+  `${ch}${topic} 아군으로 만나면 또 다른 챔임 ㅋㅋ`];
+ const endings=t.over?[
+  '걍 밴 고정함','이러니까 닷지 얘기 나오지','밸패팀 일 좀 해라',
+  '게임이 아니라 고문이네','한 판만 만나봐도 느낌 옴','대체 언제 너프하냐',
+  '도대체 이게 몇 번째 패치임','ㅈㄴ 피곤하다','우리 팀이 잡으면 왜 또 다르냐','아니 진짜 ㅋㅋ']:
+  t.under?['관짝에 못질 좀 그만해라','살려는 줘라','한 번은 숨 쉬게 해주자',
+  '밸패 의도가 뭔지 모르겠음','원챔들 불쌍하다','인간적으로 이건 좀','이쯤이면 챔 삭제 수준임','뭔 죄를 지었냐']:['조정하면 또 역풍 올 듯','서로 말이 안 통함 ㅋㅋ','걍 다음 패치까지 보자','이게 딱 적당하긴 함','과장 좀 보태지 마라','체감 문제 같음'];
+ const shortPool=t.over?['너프 언제함?','밴률 미쳤네','ㄹㅇ 이건 선 넘음','아 그 챔 ㅋㅋ','이걸 풀어줘?','와 또 얘야?','이건 개추','그만 좀 해라','밴카드 하나 더 줘','아니 저게 안 죽어?','시즌 내내 얘만 보임','그냥 ㅈ사기임']:
+ t.under?['버프는 언제?','삼가 고챔의 명복을','얘는 좀 살려줘라','관짝 추가요','장인들 울겠다','ㄹㅇ 안 보이는 이유가 있음','이거 고르면 핑 찍히던데','너프하면 레전드']:
+ ['체감상은 센데','지표만 보면 글쎄','원챔만 무섭지','너프각은 아닌 듯','괜히 건들지 마셈','딱 중간 같긴 한데','왜 이걸로 싸움','다음 패치 존버'];
+ const lanePools={TOP:['라인전 3웨이브부터 주도권 다 뺏김','탑은 상성 한 번 꼬이면 답이 없긴 함','정글 부르기도 미안함','텔 복귀 타이밍부터 게임 터짐','솔킬 한 번 나면 답 안 나옴'],JUNGLE:['첫 바위게부터 사고 남','정글 동선이 더럽게 편해 보임','우리 정글은 또 반대편에서 파밍 중','오브젝트 싸움에서 존재감 차이 심함','3캠 돌고 갱 오면 숨막힘'],MID:['미드 주도권 잡히면 사이드 다 터짐','라인 밀고 사라지는 게 제일 짜증남','로밍 한 번에 바텀 터짐','6렙 찍자마자 라인전 끝나는 느낌','미드 시야 잡기도 힘듦'],BOT:['서폿이랑 2대2에서 숨도 못 쉼','2코어 뜨면 앞라인이 걍 녹음','한타 때 포지션 잡기도 어렵네','라인전 한 번 밀리면 CS가 사라짐','우리 서폿이랑 합이 중요한 챔인데'],SUPPORT:['시야 먹으러 나갔다가 바로 물림','라인전 견제 자체가 불쾌함','와드 지우는 속도부터 차이남','원딜 보호 하나로 한타 판도 바뀜','로밍 타이밍 잡으면 전 라인이 힘듦']};
+ const lane=(lanePools[x.role]||lanePools.MID);
+ const statistic=[
+  `승률 ${win}% 찍는 데 우연이라고?`,
+  `픽률 ${pick}% / 밴률 ${ban}%면 사람들이 왜 싫어하는지 나옴`,
+  `밴률 ${ban}%랑 실제 성능은 좀 나눠서 봐야 함`,
+  `픽률 ${pick}%인데 승률 ${win}%면 표본 적다고 할 건 아니잖아`,
+  `${role} 기준 승률 ${win}%면 나름 의미 있음`,
+  `승률만 보고 결론 내리는 건 좀`,
+  `하위 티어랑 상위 티어 체감 아예 다른 거 아님?`,
+  `카운터픽 비중부터 봐야 정확할 듯`,
+  `선픽 가능한지랑 승률은 별개라니까`,
+  `전체 승률이랑 숙련자 승률은 분리해서 봐야지`,
+  `픽률 ${pick}%가 높아질 때도 승률 버티는 게 포인트임`,
+  `${ch} 밴하는 사람이 많다고 다 OP는 아니지`,
+  `지표는 ${win}%인데 체감은 왜 ${Math.round(x.win+2)}% 같냐 ㅋㅋ`];
+ const otps=t.over?[
+  `나 ${ch} ${Math.floor(100+h('rank')*850)}판 했는데 이번엔 너프 인정함`,
+  `원챔 입장에서 ${ch} 숙련도 차이 심한 건 좀 알아줬으면`,
+  `${ch} 3연너프 먹으면 챔 자체가 사라질 수도 있음`,
+  `물론 ${ch} 좋은 거 맞는데 카운터도 많다`,
+  `${ch} 너프 필요해도 숫자 조심해야 함`,
+  `니들이 ${ch} 직접 해보면 그렇게 쉽진 않을 걸`,
+  `승률 높을 때만 ${ch} 얘기하네 다른 사기는 왜 무시함`]:t.under?[
+  `${ch} 원챔인데 주력 템 뽑아도 딜 안 나옴`,
+  `${ch}${topic} 이겨도 손해 보는 기분임`,
+  `진지하게 ${ch} 쓸 이유가 사라졌음`,
+  `상대가 실수해야 겨우 킬각 보임`,
+  `승률보다 답답한 스킬 구조가 더 문제임`,
+  `몇 시즌째 ${ch} 파는데 지금이 제일 힘듦`]:[
+  `원챔이라 하는 말인데 ${ch}가 무조건 사기는 아님`,
+  `${ch}${topic} 숙련도 많이 타는 챔이라 생각함`,
+  `카운터 만나면 똑같이 힘들다`,
+  `그냥 ${ch} 잘하는 사람이 센 거임`,
+  `버프도 너프도 안 하는 게 나음`,
+  `${ch} 안 하는 애들 의견은 좀 과장된 듯`];
+ const builds=[
+  `${rune}${runeSubject} 문제지 ${ch} 자체는 아닌 거 같은데`,
+  `${item}부터 건드려야 하는 거 아님?`,
+  `${item} → ${other} 뜨는 타이밍이 말이 안 됨`,
+  `${rune} 없으면 그만큼 세지도 않잖아`,
+  `원래 ${item} 패치 이후로 이 빌드 갑자기 떴음`,
+  `${other} 나오는 판이랑 안 나오는 판 차이 큼`,
+  `${rune} 바꾸고 굴려 보면 얘기도 달라질 듯`,
+  `${item} 골드 효율부터 봐야지`,
+  `왜 다들 ${item}부터 가는지 생각해 봐`,
+  `스킬보다 ${rune}랑 ${item} 궁합이 더 중요한 듯`,
+  `이 빌드 유행시키는 영상 하나 뜨니까 다 따라감 ㅋㅋ`,
+  `${rune} 들고 2코어 ${other}면 수치 꽤 다를 텐데`];
+ const memes=t.over?[
+  `밴픽창에 ${ch} 보이면 일단 마음의 준비함`,
+  `오늘도 ${ch}한테 교육당하고 옴`,
+  `방금 ${ch}한테 터지고 글 쓰는 거 맞음`,
+  `이젠 ${ch} 밴 안 한 내가 범인이다`,
+  `우리팀 ${ch} 0/7 적팀 ${ch} 17/0 국룰`,
+  `그냥 ${ch} 전용 게임 만들어줘라`,
+  `와 또 ${ch}ㅋㅋㅋㅋ 이름만 봐도 혈압`,
+  `아니 ${ch} 궁 한 번에 무슨 일이 일어나냐`,
+  `롤갤 또 ${ch} 갤러리 되겠네`,
+  `지금 ${ch} 픽률이면 솔랭 출석체크 수준임`]:t.under?[
+  `${ch} 장인들이 한강물 대신 우물물 먹고 산다는 썰`,
+  `${ch} 픽하는 순간 자발적 하드모드`,
+  `관짝 열었더니 ${ch} 한 명 더 들어가 있음`,
+  `${ch} 살리기 운동 1일차`,
+  `아군이 ${ch} 고르면 소리부터 줄인다`,
+  `픽창에서 ${ch} 나오면 다들 고개 돌림`,
+  `${ch}도 챔피언 취급해 주세요`,
+  `이쯤이면 ${ch} 플레이 자체가 챌린지임`]:[
+  `오늘도 ${ch} 하나로 싸우는 커뮤 정상영업`,
+  `${ch} 얘기만 나오면 댓창 불남`,
+  `다들 챔혐이 심하네 ㅋㅋ`,
+  `롤은 지표보다 감정이 먼저임`,
+  `내가 하면 약하고 적이 하면 쎔`,
+  `${ch}가 뭔 죄냐 유저가 문제지`,
+  `또 ${ch}로 3시간 토론할 듯`];
+ const counter=[
+  `그 정도면 ${ch} 말고 본인 플레이부터 봐야 하는 거 아님?`,
+  `무조건 사기라 하지 말고 카운터부터 공부해`,
+  `${role}에서 상대 안 해봤으면 말 좀 아껴`,
+  `나도 ${ch} 싫은데 너프만 하면 해결됨?`,
+  `정글 개입 없는 라인전만 보면 다르게 나옴`,
+  `${ch} 말고 더 급한 애들 있음`,
+  `님 티어랑 이 챔 승률은 별 관계 없을 듯`,
+  `반박은 좋은데 게임 한 판 기준 일반화는 하지 마셈`,
+  `그러니까 픽률 ${pick}%인 것도 같이 봐야지`,
+  `밴률 높으면 다 사기라고 할 셈임?`,
+  `아예 매치업 표를 보고 와야 될 것 같은데`,
+  `특정 구간 얘기면 티어부터 적어줘라`];
+ const patchPool=isBadNerf?[
+  `${ch}같은 똥챔을 너프? 밸패팀 뭐하냐 ㅅㅂ`,
+  `승률 ${win}%를 더 낮추겠다는 거임?`,
+  `${statName} 빼면 진짜 아무것도 안 남는데`,
+  `이런 거 너프하는 동안 사기챔은 방치하는 게 레전드`,
+  `${force}단계 너프는 대체 누가 생각했냐`,
+  `약한 챔 더 패는 거 보고 정신이 아득해짐`]:isBadBuff?[
+  `OP인 ${ch}한테 ${statName} 버프를 왜 줌 ㅅㅂ`,
+  `밴률 ${ban}%인데 더 세게 해주겠다고?`,
+  `이거 다음 패치에 또 너프할 거면 왜 올림`,
+  `밸패팀이 진짜 ${ch} 좋아하나 봄 ㅋㅋ`,
+  `버프 한 번에 밴픽창 폭발 예약`,
+  `승률 ${win}% 찍는 챔에 ${force}단계 버프라니`]:isNerf?[
+  `${ch} ${statName} ${force}단계 너프면 체감 좀 있겠네`,
+  `이 정도 너프면 다음 주 픽률 지켜봐야겠다`,
+  `핵심은 ${statName}보다 ${item}일 수도 있음`,
+  `드디어 ${ch} 손댔네 ㅋㅋ 근데 강도 적절함?`,
+  `너프했다고 바로 고인 되는 건 아님`,
+  `너프 방향은 맞는데 수치가 좀 과한 거 같음`]:isBuff?[
+  `${ch} ${statName} ${force}단계 버프? 일단 환영`,
+  `이거 버프하면 ${rune} 빌드 뜨는 거 아님?`,
+  `다음 주 ${ch} 픽률 폭증할 것 같은데`,
+  `버프는 좋은데 ${force}단계는 좀 세지 않냐`,
+  `${statName} 올릴 거면 카운터도 좀 같이 봐줘`,
+  `버프 받고 ${item} 빌드가 얼마나 달라질지 궁금`]:[
+  `${ch} 얘기 전에 ${rune} 조정부터 확인해야 함`,
+  `${item} 너프가 이 챔에 더 직접적인 영향인데`,
+  `패치 목록 보니까 ${ch} 관련 건 하나도 없네`,
+  `챔피언보다 아이템 쪽 밸런스를 먼저 봐야 하지 않나`,
+  `어차피 다음 패치에도 ${ch} 불타겠지`,
+  `운영진이 ${role} 메타 좀 봐줘야 함`];
+ // Distinct personas use separate semantic pools, different linguistic registers and lengths.
+ const personas=[
+  {id:'vent',type:'화난 유저',names:['연패하고왔다','밴카드하나더','탑라인구조대','개노답솔랭','겜좀하자','랭겜망했다'],base:()=>`${intro}${frag(ventPool,'vent')} ${h('vTail')<.59?frag(endings,'endvent'):''}`.trim(),side:'against'},
+  {id:'short',type:'한 줄 드립',names:['개추요정','ㄹㅇㅋㅋ봇','킬각놓침','칼바람왕','새벽3시솔랭','개같은게임'],base:()=>frag(shortPool,'short'),side:'against'},
+  {id:'lane',type:'라인 경험담',names:[`${role}3년차`,'라인전피해자','승급전망함','복귀텔낭비함','리플돌려봤음','승률48의남자'],base:()=>`${frag(lane,'lane')} ${h('laneEnd')<.6?frag(['이게 은근 스트레스임','그래서 선픽이 부담임','한 번 터지면 복구가 안 됨','근데 하는 사람이 잘하면 또 다르더라','이거 해본 사람은 알 거임'],'lanePost'):''}`.trim(),side:'against'},
+  {id:'numbers',type:'통계 분석',names:['승률표씹어먹음','표본분석중','숫자는거짓말안함','픽밴률수집가','솔랭지표장인','챔프통계학'],base:()=>frag(statistic,'numbers'),side:t.over?'against':t.under?'for':'neutral'},
+  {id:'otp',type:'장인 의견',names:[`${ch}만500판`,`${ch}원챔`,'장인이라하긴좀','숙련도쉴드','원챔의비애',`${ch}연구회`],base:()=>frag(otps,'otp'),side:'for'},
+  {id:'craft',type:'빌드 연구',names:['템트리깎는노인','룬연구중','선템연구소','2코어부터본다','실험실서포터','꼼꼼한아이템충'],base:()=>frag(builds,'craft'),side:'neutral'},
+  {id:'balance',type:'패치 토론',names:['밸런스팀소환사','패치읽는중','26시즌생존자','패치충','수요일만기다림','패치실험체'],base:()=>frag(patchPool,'balance'),side:isBadNerf||isBadBuff?'against':'neutral'},
+  {id:'troll',type:'밈/드립',names:['개같이연패','정글차이아님','골드가고싶다','롤갤에서옴','재미로하는거임','롤좀그만하자'],base:()=>frag(memes,'troll'),side:'against'},
+  {id:'counter',type:'반박',names:['반박환영','상성표부터','승률은솔직함','티어부터밝혀','카운터연구가','픽창만봄'],base:()=>frag(counter,'counter'),side:t.over?'for':'neutral'},
+  {id:'skeptic',type:'의문 제기',names:['고민좀하고패치해','미래의롤붕이','왜이러는거냐','전시즌유저','헛소리감별사'],base:()=>frag([
+   `${win}%면 충분히 애매한데 왜 이렇게까지 불타는 거임?`,
+   `${item}를 건드리면 ${ch} 말고 다른 챔들도 같이 맞는 거잖아`,
+   `${rune}만 바꿔도 승률이 크게 달라질 것 같은데`,
+   `통계는 그렇다 쳐도 실제 매치업은 다른 문제지`,
+   `승률 변화 보고 나서 칭찬해도 안 늦음`,
+   `밸런스팀이 뭘 의도한 건지 패치노트 원문이 궁금함`,
+   `이번 주 ${role} 메타를 한 챔만 보고 판단하면 안 됨`,
+   `이 패치가 상위 티어에서도 똑같이 적용되나?`],'skeptic'),side:'neutral'},
+  {id:'argue',type:'댓댓글 싸움',names:['그건좀아니지','ㄹㅇ반박함','옆동네유저','싸움구경왓음','이게맞나','아몰랑'],base:()=>frag([
+   `위에 ${ch} 어렵다는 사람은 같은 게임 하는 거 맞음? ㅋㅋ`,
+   `사기 맞다고 하면 숙련도 얘기하는 거 진짜 웃김`,
+   `카운터 배우라는 말만 몇 번째냐`,
+   `하위 티어 기준으로 패치하지 말자는 의견도 이해는 감`,
+   `서로 다른 티어 얘기 중이라 결론 안 나는 듯`,
+   `위에 추천 박힌 글도 절반은 감정임`,
+   `${ch}한테 두 번 졌다고 모든 게 사기인 건 아니잖아`,
+   `패치 좋다는 사람도 막상 솔랭 돌리면 말 바꿀걸`,
+   `근데 저 템트리가 진짜 핵심은 맞음`],'argue'),side:'neutral'},
+  {id:'observer',type:'메타 관찰',names:['하루3판만함','메타관찰일지','픽률구경중','무작위선픽러','이번패치어때'],base:()=>frag([
+   `다음 주에 ${ch} 픽률 ${pick}% 유지할지나 보자`,
+   `${role}에 요즘 ${cl}가 좀 늘긴 했음`,
+   `${item} 장착률이랑 같이 변하면 원인 알 듯`,
+   `${ch} 대신 픽할 대체재가 애매해서 더 문제임`,
+   `밴률 ${ban}%가 내려가면 체감도 좀 달라질 듯`,
+   `원래 새 빌드 유행하면 2주쯤 뒤에 승률 안정되더라`,
+   `다음 패치에 또 반대 방향 조정 나올 것 같음`,
+   `${rune} 채택이 줄어들면 지금 논쟁도 달라질 듯`],'observe'),side:'neutral'}
  ];
- return profiles.map((c,i)=>{
-  const base=seed+':'+c.id;
-  const positive=c.side==='against'?tone.nerf:c.side==='for'?100-tone.nerf:47;
-  const volume=clamp(Math.round(19+tone.anger*1.75+x.pick*1.5),12,230);
-  const up=Math.max(0,Math.round(volume*(.28+positive/140)*(.5+f01(base+':v')*.85)));
-  const down=Math.max(0,Math.round(volume*((100-positive)/220)*(.2+f01(base+':d')*.8)));
-  return {id:c.id,name:line(c.names,':author:'+c.id),text:c.text,up,down,age:1+Math.floor(f01(base+':age')*240),reply:c.id==='rage'?(tone.over?'ㄹㅇㅋㅋ 안 만나본 사람만 쉴드침':tone.under?'ㄹㅇ 픽하면 팀이 벌써 난리남':'체감은 ㄹㅇ 별로임'):c.id==='master'&&tone.over?'그래서 밴률이 저렇게 나오냐고 ㅋㅋ':'',index:i};
+ const unique=new Set();
+ const posts=personas.map((person,i)=>{
+  let text='',attempt=0;
+  do {
+   // Re-seed deterministically by sampling one of multiple fragments, not cycling a six-line list.
+   text=person.base();
+   // Independent statements receive a champion-specific follow-up, so hundreds of different
+   // discussions do not surface precisely the same free-floating catchphrases.
+   if(!text.includes(ch)){
+    const contextual=[
+     () => `${ch} 얘기 나온 김에, ${text}`,
+     () => `${text} ${ch}만 봐도 그렇잖아`,
+     () => `${text}. 적어도 ${ch}${topic} 이럼`,
+     () => `${text} (${ch} 유저들 의견 궁금함)`,
+     () => `${text}. ${ch} 얘기가 딱 이거임`,
+     () => `${text} ${role} ${ch} 기준으로 하는 말임`,
+     () => `${text} ${ch} 보면 딱 답 나옴`,
+     () => `${text} ${ch}${topic} 예외는 아닌 듯`
+    ];
+    text=contextual[Math.floor(h('specific:'+person.id+':'+attempt)*contextual.length)]();
+   }
+   if(i===0&&t.anger>82&&h('saltanger')>.67)text+=' 진짜 ㅅㅂ';
+   if(attempt>0)text+=frag([` (${role} 기준)`,` / ${ch} 얘기임`,` · 승률 ${win}%`, `, 특히 ${item}`],'fallback'+attempt);
+   attempt++;
+  }while(unique.has(text)&&attempt<8);
+  unique.add(text);
+  const author=take(person.names,'name'+i),key=seed+':'+person.id;
+  const acceptance=person.side==='against'?t.nerf:person.side==='for'?100-t.nerf:50;
+  const scale=clamp(Math.round(18+t.anger*1.7+x.pick*1.8),10,260);
+  const up=Math.max(0,Math.round(scale*(.22+acceptance/140)*(.35+f01(key+':up')*.85)));
+  const down=Math.max(0,Math.round(scale*((100-acceptance)/195)*(.18+f01(key+':down')*.78)));
+  let reply='';
+  if(['vent','otp','counter','argue'].includes(person.id)&&h('reply'+person.id)>.22){
+   reply=take(person.id==='otp'?[`그니까 너프 강도를 잘 조절하자고`,`밴률 ${ban}%는 설명 좀 해봐 ㅋㅋ`,`원챔 말만 믿는 것도 웃기네`,`숙련도 차이 있는 건 팩트임`]:
+   person.id==='counter'?['맞는 말인데 지금 밸런스는 따로 봐야 함','그런 소리 듣기 싫어서 밴하는 거임 ㅋㅋ','직접 해보면 의견 달라질 수도','통계부터 보고 얘기하자']:
+   person.id==='argue'?['와 여기서도 싸우네 ㅋㅋ','둘 다 일리 있는데 왜 화냄','말은 맞는데 말투 왜 그럼','승률 수치 갖고 와봐']:
+   ['상대해보면 알지 ㅋㅋ','그것도 솔직히 인정','맞말추','예상대로 댓글 불타네'],'reply'+person.id);
+  }
+  return {id:person.id,name:author,type:person.type,text,up,down,age:1+Math.floor(f01(key+':age')*360),reply,index:i};
  });
+ // Rotate which 8-12 users are participating each week, rather than a fixed six-comment cast.
+ const count=8+Math.floor(h('count')*5);
+ const chosen=posts.filter(p=>p.id==='vent'||p.id==='numbers'||p.id==='otp'||p.id==='balance').concat(
+  posts.filter(p=>!['vent','numbers','otp','balance'].includes(p.id)).sort((a,b)=>h('presence'+a.id)-h('presence'+b.id)).slice(0,count-4));
+ return chosen.sort((a,b)=>a.index-b.index);
 }
 function simulatedCommunity(meta){
  const selected=state.recommendSelected;
@@ -410,20 +812,21 @@ function simulatedCommunity(meta){
  const tone=communityTone(x),comments=communityComments(x),seed=`${state.startingMeta?.seed||0}:${state.week}:${x.ch}:${x.role}:editor`;
  const saved=state.communityVotes||{},sort=state.commentSort==='recent'?'recent':'popular';
  const voteCount=c=>{
-  const vote=saved[seed+':'+c.id]||0;
+  const vote=saved[communityVoteSeed(x)+':'+c.id]||0;
   return {...c,up:c.up+(vote===1?1:0),down:c.down+(vote===-1?1:0),mine:vote};
  };
- const list=comments.map(voteCount).sort((a,b)=>sort==='recent'?a.age-b.age:(b.up-b.down)-(a.up-a.down));
+ const allComments=comments.map(voteCount).sort((a,b)=>sort==='recent'?a.age-b.age:(b.up-b.down)-(a.up-a.down));
+ const list=state.communityShowAll?allComments:allComments.slice(0,6);
  const label=tone.over?'OP 의심 · 너프 여론 우세':tone.under?'약세 · 버프 여론 우세':'의견 분분 · 관찰 중';
- return `<div class="community-box" id="communityBox"><div class="headrow">${portrait(x.ch)}<div style="flex:1"><h4>💬 ${esc(x.ch)} 실시간 반응풍 게시판</h4><div class="muted">${RN[x.role]} · OP.GG Talk 스타일의 가상 댓글 · 실제 수집 아님</div></div><span class="pill">${label}</span></div>
+ return `<details class="community-box fold-community" id="communityBox" ${state.communityExpanded?'open':''}><summary class="community-summary" data-community-summary="1">💬 ${esc(x.ch)} 커뮤니티 반응 <span class="muted">승률 ${fmt(x.win,1)}% · 너프 여론 ${tone.nerf}% · 열어보기</span></summary><div class="headrow">${portrait(x.ch)}<div style="flex:1"><h4>💬 ${esc(x.ch)} 가상 솔로랭크 토론방</h4><div class="muted">${RN[x.role]} · OP.GG·커뮤니티 게시판 분위기의 창작 댓글 · 실제 수집 아님</div></div><span class="pill">${label}</span></div>
  <div class="community-metrics"><div class="community-metric"><b>${fmt(x.win,2)}%</b><small>가상 승률</small></div><div class="community-metric"><b>${fmt(x.pick,2)}%</b><small>가상 픽률</small></div><div class="community-metric"><b>${fmt(x.ban,1)}%</b><small>가상 밴률</small></div></div>
  <div class="thread-meter">현재 가상 여론 <strong>너프 찬성 ${tone.nerf}%</strong> · 분노 지수 <strong>${tone.anger}/100</strong></div><div class="thread-mini-bar"><span style="width:${tone.nerf}%"></span></div>
- <section class="thread-board"><div class="thread-top"><div><div class="thread-title">댓글 ${list.length}개 · ${esc(x.ch)} 밸런스 토론</div><div class="thread-sub">챔피언 성능·밴률·빌드·패치 강도에 따라 생성되는 시뮬레이션</div></div><div class="thread-sort"><button type="button" data-act="sortCommunity" data-val="popular" class="${sort==='popular'?'active':''}">인기순</button><button type="button" data-act="sortCommunity" data-val="recent" class="${sort==='recent'?'active':''}">최신순</button></div></div>${list.map(c=>`<article class="thread-comment"><div class="thread-avatar">${esc(c.name.slice(0,1))}</div><div class="thread-content"><div class="thread-author"><strong>${esc(c.name)}</strong><small>Lv.${Math.floor(f01(seed+':lvl:'+c.id)*170+7)} · ${c.age}분 전 · 가상</small></div><div class="thread-body">${esc(c.text)}</div><div class="thread-votes"><button type="button" class="${c.mine===1?'chosen up':''}" data-act="voteCommunity" data-val="${c.id}" data-dir="1" aria-label="이 댓글 추천">▲ ${c.up}</button><button type="button" class="${c.mine===-1?'chosen down':''}" data-act="voteCommunity" data-val="${c.id}" data-dir="-1" aria-label="이 댓글 비추천">▼ ${c.down}</button><small>가상 추천 수 · 내 투표만 저장</small></div>${c.reply?`<div class="thread-reply">↳ ${esc(c.reply)}</div>`:''}</div></article>`).join('')}</section>
- <div class="footnote">실제 OP.GG 댓글이나 실제 투표가 아닙니다. 욕설이 섞인 게임 커뮤니티 말투를 재현한 창작 댓글입니다. 데이터·여론 수치는 PATCH ONE 가상 메타에 따라 변화하며 이용자가 누른 추천·비추천만 브라우저에 저장됩니다.</div></div>`;
+ <section class="thread-board"><div class="thread-top"><div><div class="thread-title">댓글 ${allComments.length}개 · ${esc(x.ch)} 밸런스 토론</div><div class="thread-sub">챔피언 성능·밴률·빌드·패치 강도에 따라 생성되는 시뮬레이션</div></div><div class="thread-sort"><button type="button" data-act="sortCommunity" data-val="popular" class="${sort==='popular'?'active':''}">인기순</button><button type="button" data-act="sortCommunity" data-val="recent" class="${sort==='recent'?'active':''}">최신순</button></div></div>${list.map(c=>`<article class="thread-comment"><div class="thread-avatar">${esc(c.name.slice(0,1))}</div><div class="thread-content"><div class="thread-author"><strong>${esc(c.name)}</strong><span class="forum-type">${esc(c.type||'토론')}</span><small>Lv.${Math.floor(f01(seed+':lvl:'+c.id)*170+7)} · ${c.age}분 전 · 가상</small></div><div class="thread-body">${esc(c.text)}</div><div class="thread-votes"><button type="button" class="${c.mine===1?'chosen up':''}" data-act="voteCommunity" data-val="${c.id}" data-dir="1" aria-label="이 댓글 추천">▲ ${c.up}</button><button type="button" class="${c.mine===-1?'chosen down':''}" data-act="voteCommunity" data-val="${c.id}" data-dir="-1" aria-label="이 댓글 비추천">▼ ${c.down}</button><small>가상 추천 수 · 내 투표만 저장</small></div>${c.reply?`<div class="thread-reply">↳ ${esc(c.reply)}</div>`:''}</div></article>`).join('')}${allComments.length>6?`<button class="thread-more" type="button" data-act="moreCommunity">${state.communityShowAll?'접기 ▲':`댓글 ${allComments.length-6}개 더 보기 ▼`}</button>`:''}</section>
+ <div class="footnote">실제 OP.GG 댓글이나 실제 투표가 아닙니다. OP.GG·디시·펨코 등의 짧은 드립, 반박, 통계 분석 흐름을 참고해 문구를 조합한 창작 댓글입니다. 실제 이용자 발언이 아닙니다. 데이터·여론 수치는 PATCH ONE 가상 메타에 따라 변화하며 이용자가 누른 추천·비추천만 브라우저에 저장됩니다.</div></div></details>`;
 }
 function voteCommunity(commentId,dir){
- if(!state.recommendSelected||!['rage','facts','master','build','patch','meme'].includes(commentId)||![1,-1].includes(dir))return;
- const x=state.recommendSelected;const k=`${state.startingMeta?.seed||0}:${state.week}:${x.ch}:${x.role}:editor:${commentId}`;
+ if(!state.recommendSelected||!FORUM_REPLY_IDS.includes(commentId)||![1,-1].includes(dir))return;
+ const x=state.recommendSelected;const k=communityVoteSeed(x)+':'+commentId;
  state.communityVotes=state.communityVotes||{};
  state.communityVotes[k]===dir?delete state.communityVotes[k]:state.communityVotes[k]=dir;
  render();
@@ -433,42 +836,76 @@ function patchReaction(pending,before,after){
  const focused=after.filter(x=>pending.some(p=>p.type==='champ'&&p.target===x.ch)).sort((a,b)=>Math.abs(a.win-(prior.get(a.ch+'#'+a.role)?.win??a.win))-Math.abs(b.win-(prior.get(b.ch+'#'+b.role)?.win??b.win)))[0]||after.slice().sort((a,b)=>Math.abs(b.win-(prior.get(b.ch+'#'+b.role)?.win??b.win))-Math.abs(a.win-(prior.get(a.ch+'#'+a.role)?.win??a.win)))[0];
  if(!focused)return null;
  const prev=prior.get(focused.ch+'#'+focused.role),delta=focused.win-(prev?.win??focused.win),ch=focused.ch;
- const line=delta<-.3?Math.abs(delta)>=1.5?`${ch} 너프 먹더니 승률 수직낙하 ㅋㅋㅋㅋ 이건 좀 심한 거 아니냐`:`${ch} 승률 내려간 건 좋네. 근데 아직도 상대하면 빡셈`:
- delta>.3?communityTone(focused).over?`${ch} 버프하더니 또 사기챔 만들었네 ㅅㅂ ㅋㅋ`:`${ch} 드디어 숨통 트였네 ㅋㅋ 이번 패치는 괜찮다`:
- `${ch} 패치했는데 체감이 안 나네. 다음 주 수치나 봐야겠다`;
- return {champ:ch,role:focused.role,before:fmt(prev?.win??focused.win,2),after:fmt(focused.win,2),comment:line};
+ const w0=fmt(prev?.win??focused.win,2),w1=fmt(focused.win,2),seed=`${state.startingMeta?.seed||0}:${state.week}:${ch}:${delta.toFixed(2)}:post`;
+ const t=communityTone(focused),p=pending.find(p=>p.type==='champ'&&p.target===ch);
+ const nerfLow=!!(p&&p.size<0&&(prev?.win??50)<48.5),buffHigh=!!(p&&p.size>0&&(prev?.win??50)>52.0);
+ const posts=nerfLow?[
+  `${ch}도 약한데 또 너프? 밸런스팀 무슨 생각임 ㅅㅂ`,
+  `승률 ${w0}%짜리 챔을 ${w1}%로 만든 패치 뭐냐`,
+  `${ch} 장인들은 이제 무슨 챔 하라는 거임 ㅋㅋ`,
+  `똥챔에 너프까지 박는 게 진짜 레전드임`]:buffHigh?[
+  `안 그래도 OP인 ${ch}를 버프? 다음 주 솔랭 멸망각`,
+  `${ch} 승률 ${w0} → ${w1}%? 실화냐`,
+  `이 개사기 ${ch}를 왜 더 올려주는 건데 ㅅㅂ`,
+  `걍 ${ch} 밴 고정해야겠다`]:delta<-.3?[
+  `${ch} 너프 먹더니 승률 ${w0}%에서 ${w1}% 됐네 ㅋㅋ`,
+  `${ch}한테 당하던 입장에선 속 시원하긴 함`,
+  `너프 수치 생각보다 센데? ${ch} 픽률도 내려가겠네`,
+  `${ch} 이제 좀 상대할 만해졌음. 근데 아직 빡침`,
+  `이번엔 ${ch} 너프 제대로 들어간 듯`]:delta>.3?(
+  t.over?[
+   `${ch} 이 개사기는 또 언제 이렇게 됐냐 ㅅㅂ`,
+   `아오 ${ch} 밴률 오를 소리 들린다`,
+   `승률 ${w1}%인데 버프 받은 게 레전드 ㅋㅋ`,
+   `${ch} 상대하는 사람만 손해보는 패치네`]:[
+   `${ch} 드디어 사람 됐네 ㅋㅋ`,
+   `승률 ${w0} → ${w1}%면 확실히 버프 먹었네`,
+   `${ch} 이번 패치로 다시 연구할 맛 나겠다`,
+   `이번엔 ${ch} 패치 방향 괜찮은 듯`]):[
+  `${ch} 이번 패치 승률 거의 그대로네. 체감이랑은 다를 수도`,
+  `${ch} 너프했다더니 수치가 안 움직이는데 ㅋㅋ`,
+  `아직 표본 더 쌓여야겠네. 다음 주 보자`,
+  `밸패 끝났는데 ${ch} 지표는 잠잠하네`];
+ const line=pickLine(posts,seed);
+ return {champ:ch,role:focused.role,before:w0,after:w1,comment:line};
 }
 function queueRecommended(ch,size,role){
  if(!DB.roster[ch])return;
  const snapshot=metaData(state).find(x=>x.ch===ch&&x.role===role)||metaData(state).filter(x=>x.ch===ch).sort((a,b)=>b.pick-a.pick)[0];
- state.recommendSelected={ch,role:snapshot?.role||DB.roster[ch][0]};
- state.patch={type:'champ',target:ch,axis:'damage',size:Number(size)||-1};
+ state.recommendSelected={ch,role:snapshot?.role||DB.roster[ch][0]};state.communityExpanded=true;state.communityShowAll=false;
+ state.patch={type:'champ',target:ch,axis:'ad',size:Number(size)||-1};
  state.patchSearch='';
  render();
  document.getElementById('patchTarget')?.focus({preventScroll:true});
  document.getElementById('patchTarget')?.closest('.panel')?.scrollIntoView({behavior:'smooth',block:'start'});
  notify(`${ch}을(를) 편집기로 불러왔습니다. 항목과 강도를 수정한 뒤 + 목록에 추가하세요.`);
 }
+function targetIcon(type,target){return type==='champ'?portrait(target,'mini'):type==='item'?itemIcon(target):''}
+function itemOfficialInfo(name){
+ const d=ITEM_ASSETS[normItem(name)];if(!d)return `<span class="help">아이템별 효과는 게임 시뮬레이션용이며 공식 상세 데이터 연결 시 추가 정보가 표시됩니다.</span>`;
+ const text=esc((d.description||'').slice(0,340));
+ return `<details class="effect-details"><summary>아이템 공식 효과·기본 능력치 보기</summary><div class="effect-description">${text||'공식 설명 없음'}</div><small class="muted">고유 효과는 세부 수치가 게임 데이터에 제공되지 않는 경우 효과 계수로 조절합니다.</small></details>`;
+}
 function patchUI(meta){
- const p=state.patch,queue=state.patchQueue||[],preview=patchPreview(meta),selectable=targetList(p.type),isPending=!!state.event,axis=AXES[p.type];
+ const p=state.patch,queue=state.patchQueue||[],preview=patchPreview(meta),selectable=targetList(p.type),isPending=!!state.event,axis=axesFor(p.type,p.target);
  if(!selectable.includes(p.target))p.target=selectable[0];
  if(!axis.some(x=>x[0]===p.axis))p.axis=axis[0][0];
  const needle=normChamp(state.patchSearch||'');
  const hits=needle?selectable.filter(v=>normChamp(p.type==='quest'?RN[v]:v).includes(needle)):selectable;
  const shown=needle?[...new Set([p.target,...hits])]:selectable;
  let options=shown.map(v=>`<option value="${esc(v)}" ${p.target===v?'selected':''}>${p.type==='quest'?RN[v]:v}</option>`).join('');
- const suggestions=needle?`<div class="help" style="margin-top:9px">검색 결과 ${hits.length}개${!hits.length?' · 다른 이름을 입력해보세요':''}</div><div class="target-hits">${hits.slice(0,12).map(v=>`<button type="button" class="target-hit ${p.target===v?'picked':''}" data-act="chooseTarget" data-val="${esc(v)}">${p.type==='champ'?portrait(v):''}<span>${esc(p.type==='quest'?RN[v]:v)}</span></button>`).join('')}</div>`:'';
+ const suggestions=needle?`<div class="help" style="margin-top:9px">검색 결과 ${hits.length}개${!hits.length?' · 다른 이름을 입력해보세요':''}</div><div class="target-hits">${hits.slice(0,12).map(v=>`<button type="button" class="target-hit ${p.target===v?'picked':''}" data-act="chooseTarget" data-val="${esc(v)}">${targetIcon(p.type,v)}<span>${esc(p.type==='quest'?RN[v]:v)}</span></button>`).join('')}</div>`:'';
  const recommendUI=makeRecommendations(meta);
- const rows=queue.length?`<div class="queue-list">${queue.map((q,i)=>`<div class="queue-entry"><div style="min-width:0"><div class="queue-tag">#${i+1} · ${TYPE_LABEL[q.type]}</div><b>${esc(patchNote(q))}</b></div><div class="btnrow"><button class="btn tiny" data-act="queueEdit" data-val="${i}" aria-label="${i+1}번 변경 수정">수정</button><button class="btn tiny danger" data-act="queueRemove" data-val="${i}" aria-label="${i+1}번 변경 삭제">삭제</button></div></div>`).join('')}</div>`:`<div class="queue-empty">아직 추가된 변경사항이 없습니다.<br>위에서 챔피언·아이템·룬·임무를 선택하고 <b>+ 목록에 추가</b>를 눌러주세요.</div>`;
- return pageHeader('PATCH LAB · BATCH EDITOR','패치 스튜디오','챔피언, 아이템, 룬, 라인 임무를 검색해 함께 조정하세요. 가상 승률 TOP·BOTTOM 3명 패치를 추천합니다.')+`${state.event?eventHTML():''}<div class="grid"><div class="panel" style="grid-column:span 12"><h3>📊 이번 주 추천 패치 대상 <small class="muted">게임 내부 모의 승률 · 픽률 1% 이상</small></h3><p class="help">승률 상위 3명은 하향, 하위 3명은 상향 후보입니다. 챔피언을 누르면 욕설 섞인 가상 게시판 반응과 추천/비추천을 볼 수 있고 아래 변경사항 작성 칸으로 이동합니다. 변경 항목·강도를 직접 조정한 뒤 목록에 추가하세요. 실제 OP.GG·LOL.PS 승률과 다릅니다.</p>${recommendUI}</div><div class="panel" style="grid-column:span 7"><h3>01 · 변경사항 작성 <span class="queue-count">대기 중 ${queue.length}건</span></h3><div class="editor-active">현재 편집 중: <strong>${p.type==='quest'?RN[p.target]:esc(p.target)}</strong> · 원하는 능력치와 강도를 직접 고른 뒤 목록에 추가하세요.</div>${simulatedCommunity(meta)}<div class="tabs" style="margin-bottom:18px">${Object.entries(TYPE_LABEL).map(([k,v])=>`<button class="tabbtn ${p.type===k?'active':''}" data-act="patchType" data-val="${k}">${v}</button>`).join('')}</div><div class="field" style="margin:0 0 15px"><label for="patchSearch">패치 대상 검색 · 챔피언 / 아이템 / 룬 / 임무</label><input id="patchSearch" class="selector" type="search" autocomplete="off" placeholder="${p.type==='champ'?'징크스, 아리, 제드…':p.type==='item'?'무한의 대검, 삼위일체…':p.type==='rune'?'치명적 속도, 정복자…':'탑, 정글, 미드…'}" value="${esc(state.patchSearch||'')}">${suggestions}</div><div class="fieldgrid"><div class="field"><label>변경 대상</label><select id="patchTarget" class="selector">${options}</select></div><div class="field"><label>변경 항목</label><select class="selector" id="patchAxis">${axis.map(([a,b])=>`<option value="${a}" ${p.axis===a?'selected':''}>${b}</option>`).join('')}</select></div></div><div class="field" style="margin-top:18px"><label>변경 강도</label><div class="choicegroup">${[-3,-2,-1,1,2,3].map(n=>`<button class="tabbtn ${p.size===n?'active':''}" data-act="size" data-val="${n}">${n<0?'▼':'▲'} ${Math.abs(n)}단계 ${n<0?'너프':'버프'}</button>`).join('')}</div><div class="help" style="margin-top:8px">1단계는 미세 조정, 3단계는 큰 패치입니다. 아이템 가격에서는 ▲가 가격 인상(너프)입니다.</div></div><div class="inner" style="margin-top:17px"><div class="eyebrow">지금 선택한 변경</div><div style="font-size:16px;font-weight:850;margin:8px 0 3px">${esc(patchNote(p))}</div><div class="queue-meta">동일 대상·항목을 다시 추가하면 앞서 등록한 변경을 새 강도로 교체합니다.</div></div><div class="btnrow" style="margin-top:15px"><button class="btn primary" style="flex:1" data-act="queueAdd" ${isPending?'disabled':''}>＋ 목록에 추가</button><button class="btn" data-act="randomPatch">무작위 제안</button></div>
+ const rows=queue.length?`<div class="queue-list">${queue.map((q,i)=>`<div class="queue-entry"><div style="min-width:0"><div class="queue-tag">${targetIcon(q.type,q.target)} #${i+1} · ${TYPE_LABEL[q.type]}</div><b>${esc(patchNote(q))}</b></div><div class="btnrow"><button class="btn tiny" data-act="queueEdit" data-val="${i}" aria-label="${i+1}번 변경 수정">수정</button><button class="btn tiny danger" data-act="queueRemove" data-val="${i}" aria-label="${i+1}번 변경 삭제">삭제</button></div></div>`).join('')}</div>`:`<div class="queue-empty">아직 추가된 변경사항이 없습니다.<br>위에서 챔피언·아이템·룬·임무를 선택하고 <b>+ 목록에 추가</b>를 눌러주세요.</div>`;
+ return pageHeader('PATCH LAB · BATCH EDITOR','패치 스튜디오','챔피언, 아이템, 룬, 라인 임무를 검색해 함께 조정하세요. 가상 승률 TOP·BOTTOM 3명 패치를 추천합니다.')+`${state.event?eventHTML():''}<div class="grid"><div class="panel" style="grid-column:span 12"><h3>이번 주 패치 후보 <small class="muted">가상 메타 · 승률 상위 / 하위 3명</small></h3>${recommendUI}</div><div class="panel" style="grid-column:span 7"><h3>01 · 변경사항 작성 <span class="queue-count">대기 중 ${queue.length}건</span></h3><div class="editor-active champ-line">${targetIcon(p.type,p.target)}<span><strong>${p.type==='quest'?RN[p.target]:esc(p.target)}</strong> 선택됨 · 능력치와 강도를 골라 패치 목록에 추가</span></div>${simulatedCommunity(meta)}<div class="tabs" style="margin-bottom:18px">${Object.entries(TYPE_LABEL).map(([k,v])=>`<button class="tabbtn ${p.type===k?'active':''}" data-act="patchType" data-val="${k}">${v}</button>`).join('')}</div><div class="field" style="margin:0 0 15px"><label for="patchSearch">패치 대상 검색 · 챔피언 / 아이템 / 룬 / 임무</label><input id="patchSearch" class="selector" type="search" autocomplete="off" placeholder="${p.type==='champ'?'징크스, 아리, 제드…':p.type==='item'?'무한의 대검, 삼위일체…':p.type==='rune'?'치명적 속도, 정복자…':'탑, 정글, 미드…'}" value="${esc(state.patchSearch||'')}">${suggestions}</div><div class="fieldgrid"><div class="field"><label>변경 대상</label><select id="patchTarget" class="selector">${options}</select></div><div class="field"><label>변경 항목</label><select class="selector" id="patchAxis">${axis.map(([a,b])=>`<option value="${a}" ${p.axis===a?'selected':''}>${b}</option>`).join('')}</select></div></div><div class="field" style="margin-top:18px"><label>변경 강도</label><div class="choicegroup">${[-3,-2,-1,1,2,3].map(n=>`<button class="tabbtn ${p.size===n?'active':''}" data-act="size" data-val="${n}">${n<0?'▼':'▲'} ${Math.abs(n)}단계 ${n<0?'너프':'버프'}</button>`).join('')}</div><div class="help" style="margin-top:8px">각 단계가 반영하는 수치는 항목마다 다릅니다. 가격은 ▲ 버프 = 가격 인하 / ▼ 너프 = 가격 인상입니다.</div></div><div class="inner" style="margin-top:17px"><div class="eyebrow">지금 선택한 변경</div><div style="font-size:16px;font-weight:850;margin:8px 0 3px">${esc(patchNote(p))}</div><div class="queue-meta">${currentStat(p)} · 1단계 단위: ${p.type==='item'?ITEM_STATS[p.axis]?.[1]||1:p.type==='champ'?CHAMP_STATS[p.axis]?.[1]||1:1} ${p.type==='item'?ITEM_STATS[p.axis]?.[2]||'단계':p.type==='champ'?CHAMP_STATS[p.axis]?.[2]||'단계':'단계'}</div>${p.type==='item'?itemOfficialInfo(p.target):''}</div><div class="btnrow" style="margin-top:15px"><button class="btn primary" style="flex:1" data-act="queueAdd" ${isPending?'disabled':''}>＋ 목록에 추가</button><button class="btn" data-act="randomPatch">무작위 제안</button></div>
  <div class="queue-action"><h3 style="margin-bottom:12px">02 · 이번 패치 목록 <span class="queue-count">${queue.length}건</span></h3>${rows}<div class="queue-note">변경사항을 모두 추가한 다음 한 번에 패치하세요. ${queue.length?`현재 ${queue.length}건의 조정 효과가 오른쪽에 합산되어 표시됩니다.`:'패치를 발행하기 전에는 챔피언 승률이나 게임 주차가 변하지 않습니다.'} 모든 변경은 하나의 주차·하나의 패치 노트로 저장됩니다.</div><div class="btnrow queue-actions" style="margin-top:15px"><button class="btn primary" style="flex:1" data-act="publish" ${isPending||!queue.length?'disabled':''}>⚡ ${queue.length}건 한 번에 적용 · 1주 진행</button><button class="btn danger" data-act="queueClear" ${!queue.length?'disabled':''}>목록 비우기</button></div>${isPending?`<div class="help" style="margin-top:9px;color:#f1c18f">먼저 상단 돌발 이슈에 대응해야 다음 패치를 발행할 수 있습니다.</div>`:''}</div></div>
  <div class="panel" style="grid-column:span 5"><h3>03 · 합산 영향 예측 <small class="muted">대기 중 ${queue.length}건</small></h3><div class="inner"><div class="muted" style="font-size:11px">패치 후 메타 균형</div><div style="display:flex;align-items:end;gap:12px;margin:10px 0"><strong style="font-size:31px">${Math.round(preview.bH.health)}</strong><span class="muted">→</span><strong style="font-size:31px" class="${preview.aH.health>=preview.bH.health?'value-positive':'value-negative'}">${Math.round(preview.aH.health)}</strong><span class="muted">/ 100</span></div><div class="bar"><i style="width:${preview.aH.health}%"></i></div></div><div class="score-projection">📈 예상 운영 점수: <strong>${state.score}점 → <span class="${gameScoreDelta(preview.bH,preview.aH,state)>=0?'value-positive':'value-negative'}">${clamp(state.score+estimateScoreDelta(preview.bH,preview.aH),0,100)}점</span></strong> (${gameScoreDelta(preview.bH,preview.aH,state)>=0?'+':''}${gameScoreDelta(preview.bH,preview.aH,state)}점)<br><span class="muted">점수 범위 0~100점 · 높은 승률 챔피언을 균형 있게 조정하면 상승, 잘못된 패치로 메타가 악화되면 하락합니다.</span></div><h3 style="margin:21px 0 12px">영향받는 챔피언 <small class="muted">상위 ${Math.min(preview.impact.length,7)}명</small></h3><div class="impact-list">${!queue.length?'<div class="help">변경을 목록에 추가하면 종합 예상 승률 변화가 나타납니다.</div>':preview.impact.length?preview.impact.slice(0,7).map(x=>`<div class="impact-row"><span class="champ-line">${portrait(x.ch,'mini')}<span>${esc(x.ch)} <small class="muted">${RN[x.role]}</small></span></span><b class="${x.delta>=0?'value-positive':'value-negative'} mono">${x.delta>=0?'+':''}${fmt(x.delta,2)}%p</b></div>`).join(''):'<div class="help">현재 모델에서는 눈에 띄는 승률 변화가 없습니다.</div>'}</div><p class="help" style="margin-top:14px">대기 목록의 모든 조정을 동시에 적용한 예측입니다. 추천 아이템 및 룬도 함께 재계산되며 실제 적용 뒤 반응은 돌발 이벤트로 달라질 수 있습니다.</p></div></div>`}
-function statTable(rows,showRole=true){return `<div class="tablewrap"><table class="table"><thead><tr><th>챔피언</th>${showRole?'<th>라인</th>':''}<th>승률 <small>모델</small></th><th>픽률 <small>모델</small></th><th>밴율 <small>모델</small></th><th>1코어</th><th>주요 룬</th></tr></thead><tbody>${rows.map(x=>`<tr class="clickable" data-act="showChamp" data-val="${esc(x.ch)}"><td class="champname"><span class="champ-line">${portrait(x.ch,'mini')}<strong>${esc(x.ch)}</strong></span></td>${showRole?`<td><span class="chip">${RN[x.role]}</span></td>`:''}<td class="mono ${x.win>=52.2?'value-positive':x.win<=47.5?'value-negative':''}">${fmt(x.win,2)}%</td><td class="mono">${fmt(x.pick,2)}%</td><td class="mono">${fmt(x.ban,1)}%</td><td>${x.build[0].name}</td><td>${x.runes[0].name}</td></tr>`).join('')}</tbody></table></div>`}
+function statTable(rows,showRole=true){return `<div class="tablewrap"><table class="table"><thead><tr><th>챔피언</th>${showRole?'<th>라인</th>':''}<th>승률 <small>모델</small></th><th>픽률 <small>모델</small></th><th>밴율 <small>모델</small></th><th>1코어</th><th>주요 룬</th></tr></thead><tbody>${rows.map(x=>`<tr class="clickable" data-act="showChamp" data-val="${esc(x.ch)}"><td class="champname"><span class="champ-line">${portrait(x.ch,'mini')}<strong>${esc(x.ch)}</strong></span></td>${showRole?`<td><span class="chip">${RN[x.role]}</span></td>`:''}<td class="mono ${x.win>=52.2?'value-positive':x.win<=47.5?'value-negative':''}">${fmt(x.win,2)}%</td><td class="mono">${fmt(x.pick,2)}%</td><td class="mono">${fmt(x.ban,1)}%</td><td><span class="champ-line">${itemIcon(x.build[0].name)}${esc(x.build[0].name)}</span></td><td>${x.runes[0].name}</td></tr>`).join('')}</tbody></table></div>`}
 function metaUI(meta){let list=meta.filter(x=>(state.sortRole==='ALL'||x.role===state.sortRole)&&(!state.search||x.ch.includes(state.search)||x.build.slice(0,3).some(it=>it.name.includes(state.search))));list.sort((a,b)=>state.sortDesc?b[state.sortCol]-a[state.sortCol]:a[state.sortCol]-b[state.sortCol]);return pageHeader('SIMULATED SOLO QUEUE','메타 · 티어 분석','라인별 승률, 픽률, 밴율 및 빌드 사용 분포 · 실제 솔랭 데이터가 아닌 시뮬레이션 결과')+`<div class="panel"><div class="filter" style="margin-bottom:18px"><select class="selector" id="metaRole"><option value="ALL">모든 라인</option>${ROLES.map(r=>`<option value="${r}" ${state.sortRole===r?'selected':''}>${RN[r]}</option>`).join('')}</select><select class="selector" id="metaSort">${[['win','승률'],['pick','픽률'],['ban','밴율']].map(([k,n])=>`<option value="${k}" ${state.sortCol===k?'selected':''}>${n}순</option>`).join('')}</select><button class="btn tiny" data-act="sortDir">${state.sortDesc?'내림차순 ↓':'오름차순 ↑'}</button><input class="selector" id="metaSearch" placeholder="챔피언이나 아이템 검색" value="${esc(state.search)}"></div><div class="help" style="margin-bottom:10px">${list.length}개 라인별 챔피언 조합 · 클릭 시 아이템·룬 상세 분석</div>${statTable(list.slice(0,200))}</div>`}
 function championRow(ch,meta){return meta.filter(x=>x.ch===ch).sort((a,b)=>b.pick-a.pick)}
 function champUI(meta){let filtered=Object.keys(DB.roster).filter(ch=>(state.champFilter==='ALL'||DB.roster[ch].includes(state.champFilter))&&(!state.champQuery||ch.includes(state.champQuery)));filtered.sort((a,b)=>a.localeCompare(b,'ko'));let ch=state.champSelected;if(!DB.roster[ch])ch=Object.keys(DB.roster)[0];let lanes=championRow(ch,meta),primary=lanes[0],build=itemRanking(ch,state,primary?.role),runes=runeRanking(ch,state),known=VERIFIED.has(ch),cls=DB.classes[ch];return pageHeader('173 CHAMPION SYSTEM','챔피언 · 빌드 도감','모든 챔피언의 기본 포지션, 빌드 우선순위, 룬 선호도 및 패치 후 변화 확인')+`<div class="grid"><div class="panel" style="grid-column:span 5"><h3>챔피언 찾기 <small class="muted">${filtered.length}/173명</small></h3><div class="filter"><select class="selector" id="champRole"><option value="ALL">전체</option>${ROLES.map(r=>`<option value="${r}" ${state.champFilter===r?'selected':''}>${RN[r]}</option>`).join('')}</select><input id="champSearch" class="selector" placeholder="이름 검색" value="${esc(state.champQuery)}"></div><div class="champ-grid">${filtered.map(x=>`<button class="champ-card ${x===ch?'active':''}" data-act="showChamp" data-val="${esc(x)}">${portrait(x)}<strong style="display:block">${esc(x)}</strong><small>${DB.roster[x].map(r=>RN[r]).join(' · ')}</small></button>`).join('')}</div></div>
-<div class="panel" style="grid-column:span 7"><div class="eyebrow">CHAMPION DOSSIER</div><div style="display:flex;justify-content:space-between;align-items:center;gap:12px;margin:9px 0 13px"><div class="champ-line">${portrait(ch,'lg')}<h2 style="font-size:27px;margin:0">${esc(ch)}</h2></div><span class="chip">${CLNAME[cls]}</span></div><div class="pills" style="margin-bottom:15px">${DB.roster[ch].map(r=>`<span class="pill">${EM[r]} ${RN[r]}</span>`).join('')}</div><div class="inner" style="margin-bottom:16px"><div class="eyebrow">시뮬레이션 라인별 성적</div>${lanes.map(x=>`<div style="display:flex;gap:10px;align-items:center;justify-content:space-between;margin-top:10px;font-size:12px"><b>${RN[x.role]}</b><span>승률 <b>${fmt(x.win,2)}%</b></span><span>픽률 <b>${fmt(x.pick,2)}%</b></span><span>밴율 ${fmt(x.ban,1)}%</span></div>`).join('')}</div><h3>예상 핵심 아이템 · 빌드 선택</h3>${primary?.role==='SUPPORT'?`<div class="help" style="margin-bottom:9px">서포터 시작 아이템 세계 지도집 → ${supportUpgrade(ch)} 업그레이드 경로를 포함합니다.</div>`:''}${primary?.role==='JUNGLE'?`<div class="help" style="margin-bottom:9px">정글 동료: ${junglePet(ch)} · 35스택 진화 후 강타 강화가 적용됩니다.</div>`:''}<div class="help" style="margin-bottom:11px">${known?'실제 26.21 빌드 자료를 참고한 첫 3코어 배치 + 게임 내부 선택 모델':'챔피언 특성 기반으로 산출한 가상 빌드 선호도 (실제 인기 순위 아님)'}</div>${build.map((x,i)=>{let pct=fmt(Math.exp(x.score/3)/(build.slice(0,6).reduce((a,b)=>a+Math.exp(b.score/3),0))*100,1);return `<div class="impact-row" style="margin-bottom:7px;cursor:pointer" data-act="showItem" data-val="${esc(x.name)}"><span><b class="${i===0?'rank1':''}">${i+1}.</b> ${x.name} ${i<3?'<span class="tag">주력 후보</span>':''}</span><span class="mono muted">선호 ${pct}%</span></div>`}).join('')}<h3 style="margin-top:22px">핵심 룬 조합 · 적합도</h3>${runes.slice(0,4).map((r,i)=>`<div class="impact-row" style="margin-bottom:7px;cursor:pointer" data-act="showRune" data-val="${esc(r.name)}"><span>${i+1}. <b>${r.name}</b> <small class="muted">${r.tree}</small></span><span class="mono muted">${fmt(r.score,1)}점</span></div>`).join('')}<div class="inner" style="margin-top:14px"><div class="eyebrow">추천 보조 룬 구성 (단순화)</div><div style="font-size:12px;margin-top:6px">${RUNE_SECOND[runes[0].tree]}</div></div><div class="help" style="margin-top:12px">이 챔피언의 주요 빌드가 사용하는 아이템을 너프하면 다른 아이템으로 대체할 수 있으며, 룬이 변경되면 추천 룬 순서도 바뀝니다.</div></div></div>`}
-function itemUI(meta){let data=Object.entries(DB.items).filter(([n,it])=>(state.itemFilter==='ALL'||it.tags.includes(state.itemFilter))&&(!state.itemQuery||n.includes(state.itemQuery)));let selected=DB.items[state.itemSelected]?state.itemSelected:data[0]?.[0];let selectedRune=DB.runes[state.runeSelected]?state.runeSelected:Object.keys(DB.runes)[0];let users=meta.filter(x=>x.build.slice(0,4).some(it=>it.name===selected)||(x.role==='JUNGLE'&&junglePet(x.ch)===selected)).sort((a,b)=>b.pick-a.pick).slice(0,8);let keyUsers=meta.filter(x=>x.runes[0].name===selectedRune).sort((a,b)=>b.pick-a.pick).slice(0,5);return pageHeader('ITEM & KEYSTONE META','아이템 · 룬 연구실','121종 아이템과 18종 핵심 룬의 패치 영향 — 아이템 사용 챔피언 연쇄 반영')+`<div class="grid"><div class="panel" style="grid-column:span 7"><h3>아이템 사전 <small class="muted">${data.length}개</small></h3><div class="filter"><select id="itemFilter" class="selector"><option value="ALL">전체 타입</option>${Object.keys(CLNAME).map(k=>`<option value="${k}" ${k===state.itemFilter?'selected':''}>${CLNAME[k]}</option>`).join('')}<option value="BOOTS" ${state.itemFilter==='BOOTS'?'selected':''}>신발</option><option value="PET" ${state.itemFilter==='PET'?'selected':''}>정글 동료</option></select><input id="itemSearch" class="selector" placeholder="아이템 이름 검색" value="${esc(state.itemQuery)}"></div><div style="max-height:515px;overflow:auto;margin-top:12px" class="tablewrap"><table class="table"><thead><tr><th>아이템</th><th>가격</th><th>효율 변경</th></tr></thead><tbody>${data.map(([n,it])=>`<tr class="clickable" style="${n===selected?'background:#27342d':''}" data-act="showItem" data-val="${esc(n)}"><td class="champname">${n}</td><td class="mono">${it.cost?'₲ '+it.cost.toLocaleString():'퀘스트 지급'}</td><td class="${axisVal(state,'item',n,'power')>=0?'value-positive':'value-negative'}">${axisVal(state,'item',n,'power')>=0?'+':''}${axisVal(state,'item',n,'power')}</td></tr>`).join('')}</tbody></table></div></div><div class="panel" style="grid-column:span 5"><h3>선택 아이템 파급 분석</h3><h2 style="font-size:20px;margin:0 0 7px">${selected||'선택 없음'}</h2>${selected?`<div class="help">표기 가격 ₲${DB.items[selected].cost.toLocaleString()} · 분류 ${DB.items[selected].tags.map(t=>CLNAME[t]||t).join(', ')}</div><div class="inner" style="margin-top:13px"><b class="eyebrow">주력 빌드 사용 챔피언</b><div style="margin-top:11px" class="impact-list">${users.length?users.map(x=>`<div class="impact-row" style="cursor:pointer" data-act="showChamp" data-val="${x.ch}"><span>${x.ch} <small class="muted">${RN[x.role]}</small></span><b>${fmt(x.pick)}% 픽</b></div>`).join(''):'<div class="help">현재 상위 4개 빌드에는 자주 등장하지 않습니다.</div>'}</div></div>`:''}<h3 style="margin-top:22px">핵심 룬 전체 목록</h3><select class="selector" id="runePick">${Object.entries(DB.runes).map(([name,r])=>`<option value="${name}" ${name===selectedRune?'selected':''}>${r.tree} · ${name}</option>`).join('')}</select><div class="inner" style="margin-top:12px"><b>${selectedRune}</b><div class="help" style="margin:5px 0 11px">룬 계열: ${DB.runes[selectedRune].tree} · 효율 패치 ${axisVal(state,'rune',selectedRune,'power')>=0?'+':''}${axisVal(state,'rune',selectedRune,'power')}단계</div>${keyUsers.length?keyUsers.map(x=>`<div class="impact-row" style="margin-top:5px;cursor:pointer" data-act="showChamp" data-val="${x.ch}">${x.ch}<span class="muted">${RN[x.role]}</span></div>`).join(''):'<span class="help">현재 이 룬을 주로 선택하는 챔피언이 없습니다.</span>'}</div></div></div>`}
+<div class="panel" style="grid-column:span 7"><div class="eyebrow">CHAMPION DOSSIER</div><div style="display:flex;justify-content:space-between;align-items:center;gap:12px;margin:9px 0 13px"><div class="champ-line">${portrait(ch,'lg')}<h2 style="font-size:27px;margin:0">${esc(ch)}</h2></div><span class="chip">${CLNAME[cls]}</span></div><div class="pills" style="margin-bottom:15px">${DB.roster[ch].map(r=>`<span class="pill">${EM[r]} ${RN[r]}</span>`).join('')}</div><div class="inner" style="margin-bottom:16px"><div class="eyebrow">시뮬레이션 라인별 성적</div>${lanes.map(x=>`<div style="display:flex;gap:10px;align-items:center;justify-content:space-between;margin-top:10px;font-size:12px"><b>${RN[x.role]}</b><span>승률 <b>${fmt(x.win,2)}%</b></span><span>픽률 <b>${fmt(x.pick,2)}%</b></span><span>밴율 ${fmt(x.ban,1)}%</span></div>`).join('')}</div><h3>예상 핵심 아이템 · 빌드 선택</h3>${primary?.role==='SUPPORT'?`<div class="help" style="margin-bottom:9px">서포터 시작 아이템 세계 지도집 → ${supportUpgrade(ch)} 업그레이드 경로를 포함합니다.</div>`:''}${primary?.role==='JUNGLE'?`<div class="help" style="margin-bottom:9px">정글 동료: ${junglePet(ch)} · 35스택 진화 후 강타 강화가 적용됩니다.</div>`:''}<div class="help" style="margin-bottom:11px">${known?'실제 26.21 빌드 자료를 참고한 첫 3코어 배치 + 게임 내부 선택 모델':'챔피언 특성 기반으로 산출한 가상 빌드 선호도 (실제 인기 순위 아님)'}</div>${build.map((x,i)=>{let pct=fmt(Math.exp(x.score/3)/(build.slice(0,6).reduce((a,b)=>a+Math.exp(b.score/3),0))*100,1);return `<div class="impact-row" style="margin-bottom:7px;cursor:pointer" data-act="showItem" data-val="${esc(x.name)}"><span class="champ-line">${itemIcon(x.name)}<b class="${i===0?'rank1':''}">${i+1}.</b> ${esc(x.name)} ${i<3?'<span class="tag">주력 후보</span>':''}</span><span class="mono muted">선호 ${pct}%</span></div>`}).join('')}<h3 style="margin-top:22px">핵심 룬 조합 · 적합도</h3>${runes.slice(0,4).map((r,i)=>`<div class="impact-row" style="margin-bottom:7px;cursor:pointer" data-act="showRune" data-val="${esc(r.name)}"><span>${i+1}. <b>${r.name}</b> <small class="muted">${r.tree}</small></span><span class="mono muted">${fmt(r.score,1)}점</span></div>`).join('')}<div class="inner" style="margin-top:14px"><div class="eyebrow">추천 보조 룬 구성 (단순화)</div><div style="font-size:12px;margin-top:6px">${RUNE_SECOND[runes[0].tree]}</div></div><div class="help" style="margin-top:12px">이 챔피언의 주요 빌드가 사용하는 아이템을 너프하면 다른 아이템으로 대체할 수 있으며, 룬이 변경되면 추천 룬 순서도 바뀝니다.</div></div></div>`}
+function itemUI(meta){let data=Object.entries(DB.items).filter(([n,it])=>(state.itemFilter==='ALL'||it.tags.includes(state.itemFilter))&&(!state.itemQuery||n.includes(state.itemQuery)));let selected=DB.items[state.itemSelected]?state.itemSelected:data[0]?.[0];let selectedRune=DB.runes[state.runeSelected]?state.runeSelected:Object.keys(DB.runes)[0];let users=meta.filter(x=>x.build.slice(0,4).some(it=>it.name===selected)||(x.role==='JUNGLE'&&junglePet(x.ch)===selected)).sort((a,b)=>b.pick-a.pick).slice(0,8);let keyUsers=meta.filter(x=>x.runes[0].name===selectedRune).sort((a,b)=>b.pick-a.pick).slice(0,5);return pageHeader('ITEM & KEYSTONE META','아이템 · 룬 연구실','121종 아이템과 18종 핵심 룬의 패치 영향 — 아이템 사용 챔피언 연쇄 반영')+`<div class="grid"><div class="panel" style="grid-column:span 7"><h3>아이템 사전 <small class="muted">${data.length}개</small></h3><div class="filter"><select id="itemFilter" class="selector"><option value="ALL">전체 타입</option>${Object.keys(CLNAME).map(k=>`<option value="${k}" ${k===state.itemFilter?'selected':''}>${CLNAME[k]}</option>`).join('')}<option value="BOOTS" ${state.itemFilter==='BOOTS'?'selected':''}>신발</option><option value="PET" ${state.itemFilter==='PET'?'selected':''}>정글 동료</option></select><input id="itemSearch" class="selector" placeholder="아이템 이름 검색" value="${esc(state.itemQuery)}"></div><div style="max-height:515px;overflow:auto;margin-top:12px" class="tablewrap"><table class="table"><thead><tr><th>아이템</th><th>가격</th><th>효율 변경</th></tr></thead><tbody>${data.map(([n,it])=>`<tr class="clickable" style="${n===selected?'background:#27342d':''}" data-act="showItem" data-val="${esc(n)}"><td class="champname"><span class="champ-line">${itemIcon(n)}${esc(n)}</span></td><td class="mono">${it.cost?'₲ '+it.cost.toLocaleString():'퀘스트 지급'}</td><td class="${axisVal(state,'item',n,'power')>=0?'value-positive':'value-negative'}">${axisVal(state,'item',n,'power')>=0?'+':''}${axisVal(state,'item',n,'power')}</td></tr>`).join('')}</tbody></table></div></div><div class="panel" style="grid-column:span 5"><h3>선택 아이템 파급 분석</h3><h2 class="champ-line" style="font-size:20px;margin:0 0 7px">${selected?itemIcon(selected,'lg'):''}${esc(selected||'선택 없음')}</h2>${selected?`<div class="help">표기 가격 ₲${DB.items[selected].cost.toLocaleString()} · 분류 ${DB.items[selected].tags.map(t=>CLNAME[t]||t).join(', ')}</div><div class="inner" style="margin-top:13px"><b class="eyebrow">주력 빌드 사용 챔피언</b><div style="margin-top:11px" class="impact-list">${users.length?users.map(x=>`<div class="impact-row" style="cursor:pointer" data-act="showChamp" data-val="${x.ch}"><span>${x.ch} <small class="muted">${RN[x.role]}</small></span><b>${fmt(x.pick)}% 픽</b></div>`).join(''):'<div class="help">현재 상위 4개 빌드에는 자주 등장하지 않습니다.</div>'}</div></div>`:''}<h3 style="margin-top:22px">핵심 룬 전체 목록</h3><select class="selector" id="runePick">${Object.entries(DB.runes).map(([name,r])=>`<option value="${name}" ${name===selectedRune?'selected':''}>${r.tree} · ${name}</option>`).join('')}</select><div class="inner" style="margin-top:12px"><b>${selectedRune}</b><div class="help" style="margin:5px 0 11px">룬 계열: ${DB.runes[selectedRune].tree} · 효율 패치 ${axisVal(state,'rune',selectedRune,'power')>=0?'+':''}${axisVal(state,'rune',selectedRune,'power')}단계</div>${keyUsers.length?keyUsers.map(x=>`<div class="impact-row" style="margin-top:5px;cursor:pointer" data-act="showChamp" data-val="${x.ch}">${x.ch}<span class="muted">${RN[x.role]}</span></div>`).join(''):'<span class="help">현재 이 룬을 주로 선택하는 챔피언이 없습니다.</span>'}</div></div></div>`}
 function questUI(){return pageHeader('2026 ROLE QUEST SYSTEM','라인 임무 · 보상 조정','2026년 공식 역할 임무 구조를 토대로 한 단순화된 메타 밸런스 모델')+`<div class="quest-grid">${ROLES.map(role=>{let t=getTune(state,'quest',role),reward=t.reward||0,speed=t.speed||0;let params=role==='TOP'?'1,200P':role==='JUNGLE'?'35스택':role==='SUPPORT'?'세계 지도집':'1,350P';return `<div class="quest"><div class="eyebrow">${role}</div><h4>${EM[role]} ${RN[role]} 임무</h4><span class="pill">${params}</span><div class="rule" style="margin-top:12px">${ROLE_RULE[role]}</div><div class="eyebrow">완료 보상</div><div class="reward">${REWARD[role]}</div><div class="inner" style="margin-top:13px"><div class="help">현재 패치 효과</div><div class="progress"><span class="muted">완료 속도</span><b class="${speed>=0?'value-positive':'value-negative'}">${speed>=0?'+':''}${speed}</b><span class="muted">보상 강도</span><b class="${reward>=0?'value-positive':'value-negative'}">${reward>=0?'+':''}${reward}</b></div></div><button class="btn tiny" style="margin-top:12px;width:100%" data-act="questToPatch" data-val="${role}">이 임무 패치하기 →</button></div>`}).join('')}</div><div class="panel" style="margin-top:16px"><h3>왜 라인 퀘스트를 넣었을까?</h3><p class="help">탑·미드·바텀은 챔피언 처치, 미니언, 포탑, 라인 체류로 포인트를 획득하며 지정 라인 밖에서는 임무 효율이 낮아질 수 있습니다. 정글은 펫 스택 35개, 서포터는 세계 지도집의 퀘스트를 진행합니다. 미드의 강화 신발 및 주문력/추가 공격력 보너스, 원딜의 추가 골드·신발 슬롯, 탑의 레벨 제한 확장은 각 역할의 완수 이후 전투력에 반영했습니다. 정확한 게임 내 판정·시간 단위는 간략화되어 있습니다.</p><p class="help">공식 근거: <a href="https://www.leagueoflegends.com/en-us/news/game-updates/patch-26-1-notes/" target="_blank" rel="noopener">Riot 26.1 공식 패치</a> · <a href="https://wiki.leagueoflegends.com/en-us/Role_Quests" target="_blank" rel="noopener">역할 임무 변경 내역</a></p></div>`}
 function eventHTML(){
  const ev=state.event;if(!ev)return '';
@@ -519,7 +956,7 @@ function queueEdit(index){if(!Number.isInteger(index)||index<0||index>=state.pat
 function randomPatch(){let types=['champ','item','rune','quest'],ty=types[Math.floor(Math.random()*4)],targets=targetList(ty),tgt=targets[Math.floor(Math.random()*targets.length)],ax=AXES[ty][Math.floor(Math.random()*AXES[ty].length)][0];state.patch={type:ty,target:tgt,axis:ax,size:Math.random()<.5?-1:1};render()}
 function render(){const meta=metaData(state);navRender();let body={home:()=>home(meta),patch:()=>patchUI(meta),meta:()=>metaUI(meta),champ:()=>champUI(meta),item:()=>itemUI(meta),quest:()=>questUI(),history:()=>historyUI()}[state.tab]||(()=>home(meta));document.getElementById('app').innerHTML=body();save()}
 function switchTab(id){state.tab=id;render();window.scrollTo({top:0,behavior:'instant'})}
-function handleClick(e){let el=e.target.closest('[data-act]');if(!el)return;let action=el.dataset.act,val=el.dataset.val;switch(action){case'tab':switchTab(val);break;case'patchType':state.recommendSelected=null;state.patch.type=val;state.patchSearch='';state.patch.target=targetList(val)[0];state.patch.axis=AXES[val][0][0];render();break;case'chooseTarget':state.recommendSelected=null;state.patch.target=val;state.patchSearch='';render();break;case'recommend':queueRecommended(val,Number(el.dataset.size),el.dataset.role);break;case'sortCommunity':state.commentSort=val==='recent'?'recent':'popular';render();break;case'voteCommunity':voteCommunity(val,Number(el.dataset.dir));break;case'size':state.patch.size=Number(val);render();break;case'queueAdd':queueAdd();break;case'queueRemove':queueRemove(Number(val));break;case'queueEdit':queueEdit(Number(val));break;case'queueClear':if(state.patchQueue.length&&confirm('대기 중인 모든 변경사항을 비울까요?')){state.patchQueue=[];render();}break;case'publish':patchPublish();break;case'randomPatch':randomPatch();break;case'showChamp':state.champSelected=val;switchTab('champ');break;case'showItem':state.itemSelected=val;switchTab('item');break;case'showRune':state.runeSelected=val;switchTab('item');break;case'questToPatch':state.patch={type:'quest',target:val,axis:'reward',size:1};switchTab('patch');break;case'sortDir':state.sortDesc=!state.sortDesc;render();break;case'eventChoice':{
+function handleClick(e){let el=e.target.closest('[data-act]');if(!el)return;let action=el.dataset.act,val=el.dataset.val;switch(action){case'tab':switchTab(val);break;case'patchType':state.recommendSelected=null;state.communityExpanded=false;state.patch.type=val;state.patchSearch='';state.patch.target=targetList(val)[0];state.patch.axis=val==='item'?'cost':val==='champ'?'ad':AXES[val][0][0];render();break;case'chooseTarget':state.recommendSelected=null;state.communityExpanded=false;state.patch.target=val;state.patchSearch='';render();break;case'recommend':queueRecommended(val,Number(el.dataset.size),el.dataset.role);break;case'sortCommunity':state.commentSort=val==='recent'?'recent':'popular';render();break;case'moreCommunity':state.communityShowAll=!state.communityShowAll;render();break;case'voteCommunity':voteCommunity(val,Number(el.dataset.dir));break;case'size':state.patch.size=Number(val);render();break;case'queueAdd':queueAdd();break;case'queueRemove':queueRemove(Number(val));break;case'queueEdit':queueEdit(Number(val));break;case'queueClear':if(state.patchQueue.length&&confirm('대기 중인 모든 변경사항을 비울까요?')){state.patchQueue=[];render();}break;case'publish':patchPublish();break;case'randomPatch':randomPatch();break;case'showChamp':state.champSelected=val;switchTab('champ');break;case'showItem':state.itemSelected=val;switchTab('item');break;case'showRune':state.runeSelected=val;switchTab('item');break;case'questToPatch':state.patch={type:'quest',target:val,axis:'reward',size:1};switchTab('patch');break;case'sortDir':state.sortDesc=!state.sortDesc;render();break;case'eventChoice':{
  const ev=state.event,choice=ev?.choices?.[Number(val)];if(!choice)return;
  const eff=choice.effect||{};
  state.trust=clamp(state.trust+(eff.trust||0),0,100);state.fan=clamp(state.fan+(eff.fan||0),0,100);
@@ -534,9 +971,18 @@ function handleClick(e){let el=e.target.closest('[data-act]');if(!el)return;let 
  notify(entry.report?`${entry.report.build.ch} 빌드 확산 반영! 픽률 ${fmt(entry.report.after.pick,2)}% · 승률 ${fmt(entry.report.after.win,2)}%`:'운영 결정이 반영되었습니다.');break}
 case'export':{let blob=new Blob([JSON.stringify(state,null,2)],{type:'application/json'});let url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='PATCH_ONE_save_26_'+(21+state.week)+'.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);break}case'import':document.getElementById('importFile').click();break;case'reset':if(confirm('현재 시뮬레이션을 삭제하고 새 게임을 시작할까요?')){state=fresh();render();notify(`새 메타 생성! 균형도에 따른 시작 점수는 ${state.score}점입니다.`)}break;}}
 document.addEventListener('click',handleClick);
-document.addEventListener('change',e=>{switch(e.target.id){case'patchTarget':state.recommendSelected=null;state.patch.target=e.target.value;state.patchSearch='';render();break;case'patchAxis':state.patch.axis=e.target.value;render();break;case'metaRole':state.sortRole=e.target.value;render();break;case'metaSort':state.sortCol=e.target.value;render();break;case'champRole':state.champFilter=e.target.value;render();break;case'itemFilter':state.itemFilter=e.target.value;render();break;case'runePick':state.runeSelected=e.target.value;render();break}});
+document.addEventListener('toggle',e=>{if(e.target.id==='communityBox'){state.communityExpanded=e.target.open;save()}},true);
+document.addEventListener('change',e=>{switch(e.target.id){case'patchTarget':state.recommendSelected=null;state.patch.target=e.target.value;state.communityExpanded=false;state.patchSearch='';render();break;case'patchAxis':state.patch.axis=e.target.value;render();break;case'metaRole':state.sortRole=e.target.value;render();break;case'metaSort':state.sortCol=e.target.value;render();break;case'champRole':state.champFilter=e.target.value;render();break;case'itemFilter':state.itemFilter=e.target.value;render();break;case'runePick':state.runeSelected=e.target.value;render();break}});
 // Search changes without losing user focus by deferring repaint until Enter or input pause.
 let inputTimer=null;document.addEventListener('input',e=>{let id=e.target.id,prop={metaSearch:'search',champSearch:'champQuery',itemSearch:'itemQuery',patchSearch:'patchSearch'}[id];if(!prop)return;state[prop]=e.target.value;clearTimeout(inputTimer);inputTimer=setTimeout(()=>{let focusId=id,start=e.target.selectionStart||0;render();let input=document.getElementById(focusId);if(input){input.focus();try{input.setSelectionRange(start,start)}catch(_){}}},360)});
-document.getElementById('importFile').addEventListener('change',async e=>{let file=e.target.files?.[0];if(!file)return;try{let x=JSON.parse(await file.text());if(x.version!==2||!x.tunes||!Array.isArray(x.history))throw Error('invalid');state=x;if(!Array.isArray(state.patchQueue))state.patchQueue=[];state.patchQueue=state.patchQueue.filter(validPatch).slice(0,30);if(!validPatch(state.patch))state.patch={...DEFAULT_PATCH};if(!Array.isArray(state.buildTrends))state.buildTrends=[];if(!Array.isArray(state.eventLog))state.eventLog=[];migrateScoreAndMeta(state);if(!state.communityVotes||typeof state.communityVotes!=='object')state.communityVotes={};if(!['popular','recent'].includes(state.commentSort))state.commentSort='popular';if(!state.recommendSelected||!DB.roster[state.recommendSelected.ch])state.recommendSelected=null;render();notify('저장 파일을 불러왔습니다.')}catch(err){notify('호환되지 않는 저장 파일입니다.')}e.target.value=''});
+document.getElementById('importFile').addEventListener('change',async e=>{let file=e.target.files?.[0];if(!file)return;try{let x=JSON.parse(await file.text());if(x.version!==2||!x.tunes||!Array.isArray(x.history))throw Error('invalid');state=x;migratePriceSemantics(state);if(!Array.isArray(state.patchQueue))state.patchQueue=[];state.patchQueue=state.patchQueue.filter(validPatch).slice(0,30);if(!validPatch(state.patch))state.patch={...DEFAULT_PATCH};if(!Array.isArray(state.buildTrends))state.buildTrends=[];if(!Array.isArray(state.eventLog))state.eventLog=[];migrateScoreAndMeta(state);
+function migratePriceSemantics(st){
+ if(st.priceSemantics===9)return;
+ for(const t of Object.values(st.tunes?.item||{}))if(typeof t.cost==='number')t.cost=-t.cost;
+ for(const p of [...(st.patchQueue||[]),st.patch])if(p?.type==='item'&&p.axis==='cost')p.size=-p.size;
+ st.priceSemantics=9;
+}
+migratePriceSemantics(state);if(!state.communityVotes||typeof state.communityVotes!=='object')state.communityVotes={};if(!['popular','recent'].includes(state.commentSort))state.commentSort='popular';if(!state.recommendSelected||!DB.roster[state.recommendSelected.ch])state.recommendSelected=null;render();notify('저장 파일을 불러왔습니다.')}catch(err){notify('호환되지 않는 저장 파일입니다.')}e.target.value=''});
 render();musicUI();loadChampionArt();
+
 </script></body></html>
